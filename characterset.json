@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/characterset.json",
+  "title": "CharacterSets",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "characterSetList": {
+      "description": "",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["characterSetList"]
+}
