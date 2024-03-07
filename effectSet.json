@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effectSet.json",
+  "title": "effectSet",
+  "description": "",
+  "additionalProperties": false,
+  "type": "object",
+  "patternProperties": {
+    "^$": {
+      "effectList": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "audio",
+                "cameraTrack",
+                "particle",
+                "pointLight",
+                "renderable",
+                "cameraShake",
+                "shapeRenerable",
+                "customizationRenderable",
+                "pointLight",
+                "luaEvent",
+                "spotLight",
+                "ambientLight",
+                "text"
+              ]
+            },
+            "name": { "type": "string" },
+            "offset": {
+              "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
+            },
+            "direction": {
+              "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
+            },
+            "attached": { "type": "boolean" },
+            "delay": { "type": "number" },
+            "cameraTrack": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "FOV": { "type": "number" },
+                  "duration": { "type": "number" },
+                  "easing": { "enum": ["linear", "easeInOutQuad"] }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

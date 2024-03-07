@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effectSetDb.json",
+  "title": "effectSetDb",
+  "description": "",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "characterSetList": {
+      "description": "",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string" },
+          "showInEditor": { "type": "boolean" }
+        }
+      }
+    }
+  },
+  "required": ["effectSetList"]
+}
