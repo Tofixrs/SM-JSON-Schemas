@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/hit.json",
+  "title": "Hit",
+  "description": "",
+  "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "col": {
+      "type": "string"
+    },
+    "offset": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": 0
+      }
+    }
+  },
+  "required": ["col", "offset"]
+}

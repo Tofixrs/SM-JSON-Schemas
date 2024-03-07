@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/refineryCraftingRecipes.json",
+  "title": "refineryCraftingRecipes",
+  "description": "",
+  "type": "object",
+  "patternProperties": {
+    "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "itemId": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "description": "item to craft"
+        },
+        "quantity": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "quantity of the item crafted"
+        }
+      }
+    }
+  }
+}

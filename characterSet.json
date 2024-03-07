@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/characterSet.json",
+  "title": "characterSet",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+          },
+          "renderables": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ragdoll": {
+            "type": "string"
+          },
+          "tumble": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "col": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            }
+          },
+          "hit": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "crouch": {
+                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/hit.json"
+              },
+              "stand": {
+                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/hit.json"
+              }
+            }
+          },
+          "unit": {
+            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/NewScriptFormat.json"
+          },
+          "character": {
+            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/NewScriptFormat.json"
+          },
+          "movement": {
+            "type": "object",
+            "properties": {
+              "moveSpeed": { "type": "number" },
+              "slowDownSpeed": { "type": "number" },
+              "crouchSpeed": { "type": "number" },
+              "sprintSpeed": { "type": "number" },
+              "headingRotationSpeed": { "type": "number" },
+              "facingRotationSpeed": { "type": "number" },
+              "canSwim": { "type": "boolean" }
+            }
+          },
+          "capsule": {
+            "type": "object",
+            "properties": {
+              "radius": { "type": "number" },
+              "height": { "type": "number" },
+              "crouchHeight": { "type": "number" }
+            }
+          },
+          "mass": { "type": "number" },
+          "characterShapeUuid": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+          },
+          "paint": {
+            "enable": { "type": "boolean" },
+            "defaultColor": {
+              "type": "string",
+              "pattern": "^(?:[0-9a-fA-F]{3}){1,2}$"
+            },
+            "effect": {
+              "$ref": "https://raw.githubusercontent/com/Tofixrs/SM-JSON-Schemas/master/effect.json"
+            }
+          },
+          "sound": {
+            "type": "object",
+            "properties": {
+              "movementSoundFrames": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "crouchedMovementSoundFrames": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

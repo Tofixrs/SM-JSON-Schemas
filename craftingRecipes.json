@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/craftingRecipes.json",
+  "title": "CraftingRecipes",
+  "description": "",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "itemId": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "description": "item to craft"
+      },
+      "quantity": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "quantity of the item crafted"
+      },
+      "craftTime": {
+        "type": "integer",
+        "description": "The crafting time of the item in seconds + (3 due to anim)",
+        "minimum": 0
+      },
+      "ingredientList": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "quantity": {
+              "type": "integer",
+              "description": "quantity of the item needed to craft",
+              "minimum": 1
+            },
+            "itemId": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            }
+          }
+        }
+      },
+      "extras": {
+        "type": "array",
+        "description": "Extra item that you will get when crafting used for things such as getting water from bucket",
+        "items": {
+          "type": "object",
+          "properties": {
+            "quantity": {
+              "type": "integer",
+              "description": "quantity of the item",
+              "minimum": 1
+            },
+            "itemId": {
+              "type": "string",
+              "description": "The item uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            }
+          }
+        }
+      },
+      "reward": {
+        "type": "object",
+        "properties": {
+          "tier": {
+            "enum": ["Common", "Rare", "Epic", ""]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/NewScriptFormat.json",
+  "title": "NewScriptFormat",
+  "description": "",
+  "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "scriptPath": {
+      "type": "string"
+    },
+    "scriptClass": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object"
+    }
+  },
+  "required": ["scriptPath", "scriptClass"]
+}
