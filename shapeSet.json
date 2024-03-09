@@ -311,6 +311,13 @@
             "properties": {
               "slots": { "type": "integer" }
             }
+          },
+          "survivalSpring": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "length": { "type": "number" }
+            }
           }
         }
       }
