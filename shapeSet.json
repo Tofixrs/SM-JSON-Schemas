@@ -57,7 +57,10 @@
                 "type": "object",
                 "description": "Additional data provided to the script available under self.data"
               },
-              "tag": { "type": "string" }
+              "tag": {
+                "type": "string",
+                "description": "Used for https://scrapmechanicdocs.com/docs/Game-Script-Environment/Static-Functions/sm.cell#getinteractablesbytag"
+              }
             },
             "required": ["filename", "classname"]
           },
@@ -269,7 +272,8 @@
               "sustainedAudio": { "type": "string" }
             }
           }
-        }
+        },
+        "harvest": { "type": "boolean" }
       }
     }
   }
