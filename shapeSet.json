@@ -60,6 +60,35 @@
               "tag": {
                 "type": "string",
                 "description": "Used for https://scrapmechanicdocs.com/docs/Game-Script-Environment/Static-Functions/sm.cell#getinteractablesbytag"
+              },
+              "seat": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "bones": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": { "type": "string" },
+                        "offset": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "x": { "type": "number" },
+                            "y": { "type": "number" },
+                            "z": { "type": "number" }
+                          }
+                        },
+                        "freeRotation": { "type": "boolean" }
+                      }
+                    }
+                  },
+                  "ragdollFile": { "type": "string" },
+                  "enterAudio": { "type": "string" },
+                  "exitAudio": { "type": "string" }
+                }
               }
             },
             "required": ["filename", "classname"]
@@ -144,6 +173,35 @@
               "StaticYmmZmmXmm"
             ]
           },
+          "seat": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "bones": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": { "type": "string" },
+                    "offset": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "x": { "type": "number" },
+                        "y": { "type": "number" },
+                        "z": { "type": "number" }
+                      }
+                    },
+                    "freeRotation": { "type": "boolean" }
+                  }
+                }
+              },
+              "ragdollFile": { "type": "string" },
+              "enterAudio": { "type": "string" },
+              "exitAudio": { "type": "string" }
+            }
+          },
           "sticky": { "type": "string" },
           "physicsMaterial": {
             "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/materials.json"
@@ -185,35 +243,6 @@
                 "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/rend.json"
               }
             ]
-          },
-          "seat": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "bones": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "properties": {
-                    "name": { "type": "string" },
-                    "offset": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "x": { "type": "number" },
-                        "y": { "type": "number" },
-                        "z": { "type": "number" }
-                      }
-                    },
-                    "freeRotation": { "type": "boolean" }
-                  }
-                }
-              },
-              "ragdollFile": { "type": "string" },
-              "enterAudio": { "type": "string" },
-              "exitAudio": { "type": "string" }
-            }
           },
           "characterShape": {
             "type": "object",
