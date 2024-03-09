@@ -13,13 +13,15 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "time": { "type": "number" },
-        "value": {
-          "type": "array",
-          "items": { "type": "number" }
-        },
-        "easing": {
-          "enum": ["easeInQuad", "easeOutQuad"]
+        "properties": {
+          "time": { "type": "number" },
+          "value": {
+            "type": "array",
+            "items": { "type": "number" }
+          },
+          "easing": {
+            "enum": ["easeInQuad", "easeOutQuad"]
+          }
         }
       }
     }
