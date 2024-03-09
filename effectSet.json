@@ -43,6 +43,7 @@
               },
               "attached": { "type": "boolean" },
               "delay": { "type": "number" },
+              "duration": { "type": "number" },
               "parameters": {
                 "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effectParams.json"
               },
