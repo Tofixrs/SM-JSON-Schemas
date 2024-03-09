@@ -36,11 +36,11 @@
             "additionalProperties": false,
             "properties": {
               "mass": { "type": "integer" },
-              "material": { "enum": ["Wood", "Plastic", "Rock"] }
+              "material": { "enum": ["Wood", "Plastic", "Rock", "Grass"] }
             }
           },
           "mass": { "type": "integer" },
-          "material": { "enum": ["Wood", "Plastic", "Rock"] },
+          "material": { "enum": ["Wood", "Plastic", "Rock", "Grass"] },
           "script": {
             "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/oldScriptFormat.json"
           },
