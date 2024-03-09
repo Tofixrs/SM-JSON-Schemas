@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/subMesh.json",
+  "title": "subMesh",
+  "description": "",
+  "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "textureList": { "type": "array", "items": "strings" },
+    "material": { "type": "string" },
+    "custom": { "type": "object" }
+  },
+  "patternProperties": {
+    "^pose[0-9]*$": {
+      "type": "string"
+    }
+  }
+}

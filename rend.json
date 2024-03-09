@@ -30,24 +30,14 @@
           "subMeshList": {
             "type": "array",
             "items": {
-              "custom": { "type": "object" },
-              "material": { "type": "string" }
+              "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/subMesh.json"
             }
           },
           "subMeshMap": {
             "type": "object",
             "patternProperties": {
               "^.*$": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "material": { "type": "string" },
-                  "textureList": {
-                    "type": "array",
-                    "items": { "type": "string" }
-                  },
-                  "custom": { "type": "object" }
-                }
+                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/subMesh.json"
               }
             }
           }
