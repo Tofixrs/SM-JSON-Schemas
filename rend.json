@@ -11,7 +11,7 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "maxViewDistance": { "type": "integer" },
+          "maxViewDistance": { "type": "number" },
           "mesh": { "type": "string" },
           "includes": {
             "type": "array",
