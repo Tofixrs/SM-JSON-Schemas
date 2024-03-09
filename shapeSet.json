@@ -90,6 +90,13 @@
                   "enterAudio": { "type": "string" },
                   "exitAudio": { "type": "string" }
                 }
+              },
+              "steering": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "steerAngle": { "type": "number" }
+                }
               }
             },
             "required": ["filename", "classname"]
