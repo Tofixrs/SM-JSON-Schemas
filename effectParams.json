@@ -7,7 +7,7 @@
     { "type": "array", "items": { "type": "string" } },
     {
       "type": "object",
-      "patternProperies": {
+      "patternProperties": {
         "^.*$": {
           "type": "array",
           "items": {
