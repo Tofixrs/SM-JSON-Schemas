@@ -19,6 +19,13 @@
               "enum": ["POSITION", "NORMAL", "UV0", "VERTEX_COLOR", "TANGENT"]
             }
           },
+          "subMeshList": {
+            "type": "array",
+            "items": {
+              "custom": { "type": "object" },
+              "material": { "type": "string" }
+            }
+          },
           "subMeshMap": {
             "type": "object",
             "patternProperties": {
@@ -26,16 +33,7 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                  "material": {
-                    "oneOf": [
-                      {
-                        "enum": ["DifAsgNorAo", "UVAnimDifAsgNor", "DifAsgNor"]
-                      },
-                      {
-                        "type": "string"
-                      }
-                    ]
-                  },
+                  "material": { "type": "string" },
                   "textureList": {
                     "type": "array",
                     "items": { "type": "string" }
