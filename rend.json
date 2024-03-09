@@ -40,6 +40,20 @@
                 "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/subMesh.json"
               }
             }
+          },
+          "animationList": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": { "type": "string" },
+                "file": {
+                  "type": "string",
+                  "pattern": "\\$((?:GAME_DATA|CONTENT_DATA|SURVIVAL_DATA|CHALLENGE_DATA|CONTENT_([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})))[\\\\\\/](?:[a-zA-Z0-9_]+[\\\\\\/])*([a-zA-Z0-9_.]+)"
+                }
+              }
+            }
           }
         }
       }
