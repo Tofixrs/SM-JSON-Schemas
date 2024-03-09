@@ -412,7 +412,25 @@
               "offEffect": { "type": "string" }
             }
           },
-          "radio": { "type": "object" }
+          "radio": { "type": "object" },
+          "thruster": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "levels": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "averageForce": { "type": "number" },
+                    "forceVariation": { "type": "number" }
+                  }
+                }
+              },
+              "effect": { "type": "string" }
+            }
+          }
         }
       }
     }
