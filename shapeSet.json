@@ -125,12 +125,37 @@
             "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/materials.json"
           },
           "ratings": {
-            "density": { "type": "integer" },
-            "durability": { "type": "integer" },
-            "friction": { "type": "integer" },
-            "buoyancy": { "type": "integer" }
+            "type": "object",
+            "properties": {
+              "density": { "type": "integer" },
+              "durability": { "type": "integer" },
+              "friction": { "type": "integer" },
+              "buoyancy": { "type": "integer" }
+            }
           },
-          "flammable": { "type": "boolean" }
+          "flammable": { "type": "boolean" },
+          "autoTool": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+          },
+          "stackSize": { "type": "integer" },
+          "restrictions": {
+            "type": "object",
+            "properties": {
+              "destructable": { "type": "boolean" },
+              "erasable": { "type": "boolean" }
+            }
+          },
+          "cylinder": {
+            "type": "object",
+            "properties": {
+              "diameter": { "type": "number" },
+              "depth": { "type": "number" },
+              "margin": { "type": "number" },
+              "axis": { "enum": ["Y", "X", "Z"] }
+            }
+          },
+          "showInInventory": { "type": "boolean" }
         }
       }
     }
