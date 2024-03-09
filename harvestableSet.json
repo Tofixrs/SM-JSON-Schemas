@@ -57,7 +57,22 @@
             "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/materials.json"
           },
           "script": {
-            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/oldScriptFormat.json"
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "description": "Path to the script"
+              },
+              "class": {
+                "type": "string",
+                "description": "The class that the game will inject all the callbacks and properties into"
+              },
+              "data": {
+                "type": "object",
+                "description": "Additional data provided to the script available under self.data"
+              }
+            },
+            "required": ["class", "file"]
           },
           "renderable": {
             "oneOf": [

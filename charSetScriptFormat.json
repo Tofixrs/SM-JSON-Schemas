@@ -1,16 +1,16 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/oldScriptFormat.json",
-  "title": "oldScriptFormat",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/charSetScriptFormat.json",
+  "title": "charSetScriptFormat",
   "description": "",
   "additionalProperties": false,
   "type": "object",
   "properties": {
-    "file": {
+    "scriptPath": {
       "type": "string",
       "description": "Path to the script"
     },
-    "class": {
+    "scriptClass": {
       "type": "string",
       "description": "The class that the game will inject all the callbacks and properties into"
     },
@@ -19,5 +19,5 @@
       "description": "Additional data provided to the script available under self.data"
     }
   },
-  "required": ["class", "file"]
+  "required": ["scriptPath", "scriptClass"]
 }
