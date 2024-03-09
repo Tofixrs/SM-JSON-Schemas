@@ -118,19 +118,19 @@
               "StaticYmZmNegXm",
               "StaticYmZmXm",
               "StaticYmmZmmXmm"
-            ],
-            "sticky": { "type": "string" },
-            "physicsMaterial": {
-              "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/materials.json"
-            },
-            "ratings": {
-              "density": { "type": "integer" },
-              "durability": { "type": "integer" },
-              "friction": { "type": "integer" },
-              "buoyancy": { "type": "integer" }
-            },
-            "flammable": { "type": "boolean" }
-          }
+            ]
+          },
+          "sticky": { "type": "string" },
+          "physicsMaterial": {
+            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/materials.json"
+          },
+          "ratings": {
+            "density": { "type": "integer" },
+            "durability": { "type": "integer" },
+            "friction": { "type": "integer" },
+            "buoyancy": { "type": "integer" }
+          },
+          "flammable": { "type": "boolean" }
         }
       }
     }
