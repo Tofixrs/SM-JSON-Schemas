@@ -235,7 +235,26 @@
               "waterGain": { "type": "number" }
             }
           },
-          "carryItem": { "type": "boolean" }
+          "carryItem": { "type": "boolean" },
+          "pipe": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "openings": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "side": { "enum": ["+X", "-X", "+Y", "-Y", "+Z", "-Z"] },
+                    "x": { "type": "number" },
+                    "y": { "type": "number" },
+                    "z": { "type": "number" }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
