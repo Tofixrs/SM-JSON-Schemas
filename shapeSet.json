@@ -344,7 +344,17 @@
           "survivalSequence": { "type": "object" },
           "survivalSensor": { "type": "object" },
           "survivalPiston": { "type": "object" },
-          "previewRotation": { "type": "array", "items": { "type": "number" } }
+          "previewRotation": { "type": "array", "items": { "type": "number" } },
+          "plantable": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "harvestable": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+              }
+            }
+          }
         }
       }
     }
