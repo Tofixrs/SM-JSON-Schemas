@@ -330,7 +330,8 @@
           "survivalThruster": { "type": "object" },
           "survivalSequence": { "type": "object" },
           "survivalSensor": { "type": "object" },
-          "survivalPiston": { "type": "object" }
+          "survivalPiston": { "type": "object" },
+          "previewRotation": { "type": "array", "items": { "type": "number" } }
         }
       }
     }
