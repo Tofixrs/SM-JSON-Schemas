@@ -16,9 +16,20 @@
             "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
           },
           "name": { "type": "string" },
+          "type": { "enum": ["filler"] },
+          "slope": { "enum": ["rotate"] },
           "col": { "type": "string" },
           "color": {
-            "oneOf": [{ "type": "array", "items": { "type": "string" } }]
+            "oneOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^(?:[0-9a-fA-F]{3}){1,2}$"
+                }
+              },
+              { "type": "string", "pattern": "^(?:[0-9a-fA-F]{3}){1,2}$" }
+            ]
           },
           "physics": {
             "type": "object",
@@ -34,7 +45,18 @@
             "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/oldScriptFormat.json"
           },
           "renderable": {
-            "oneOf": [{ "type": "string" }]
+            "oneOf": [
+              { "type": "string" },
+              {
+                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/rend.json"
+              }
+            ]
+          },
+          "collides": {
+            "character": { "type": "boolean" },
+            "body": { "type": "boolean" },
+            "projectile": { "type": "boolean" },
+            "melee": { "type": "boolean" }
           }
         }
       }

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/rend.json",
+  "title": "Vec3",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "lodList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "maxViewDistance": { "type": "integer" },
+          "mesh": { "type": "string" },
+          "subMeshMap": {
+            "patternProperties": {
+              "^.*$": {
+                "material": { "enum": ["DifAsgNorAo"] },
+                "textureList": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
