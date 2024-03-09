@@ -56,7 +56,8 @@
               "data": {
                 "type": "object",
                 "description": "Additional data provided to the script available under self.data"
-              }
+              },
+              "tag": { "type": "string" }
             },
             "required": ["filename", "classname"]
           },
@@ -164,7 +165,11 @@
             "additionalProperties": false,
             "properties": {
               "destructable": { "type": "boolean" },
-              "erasable": { "type": "boolean" }
+              "erasable": { "type": "boolean" },
+              "buildable": { "type": "boolean" },
+              "liftable": { "type": "boolean" },
+              "convertibleToDynamic": { "type": "boolean" },
+              "paintable": { "type": "boolean" }
             }
           },
           "showInInventory": { "type": "boolean" },
