@@ -199,6 +199,17 @@
               },
               "ragdollFile": { "type": "string" }
             }
+          },
+          "characterShape": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "characterUuid": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+              },
+              "placementSphereRadius": { "type": "number" }
+            }
           }
         }
       }
