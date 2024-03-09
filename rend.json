@@ -23,7 +23,9 @@
                 "VERTEX_COLOR",
                 "TANGENT",
                 "UV1",
-                "TANGENTS"
+                "TANGENTS",
+                "BLEND_INDICES",
+                "BLEND_WEIGHTS"
               ]
             }
           },
@@ -51,7 +53,8 @@
                 "file": {
                   "type": "string",
                   "pattern": "\\$((?:GAME_DATA|CONTENT_DATA|SURVIVAL_DATA|CHALLENGE_DATA|CONTENT_([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})))[\\\\\\/](?:[a-zA-Z0-9_]+[\\\\\\/])*([a-zA-Z0-9_.]+)"
-                }
+                },
+                "looping": { "type": "boolean" }
               }
             }
           }

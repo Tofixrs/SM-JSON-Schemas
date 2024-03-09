@@ -42,6 +42,13 @@
               "margin": { "type": "number" }
             }
           },
+          "sphere": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "diameter": { "type": "number" }
+            }
+          },
           "scripted": {
             "additionalProperties": false,
             "type": "object",
@@ -241,7 +248,8 @@
               "liftable": { "type": "boolean" },
               "convertibleToDynamic": { "type": "boolean" },
               "paintable": { "type": "boolean" },
-              "usable": { "type": "boolean" }
+              "usable": { "type": "boolean" },
+              "connectable": { "type": "boolean" }
             }
           },
           "showInInventory": { "type": "boolean" },
@@ -354,6 +362,14 @@
                 "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
               }
             }
+          },
+          "friction": { "type": "number" },
+          "restitution": { "type": "number" },
+          "harvestablePart": { "type": "boolean" },
+          "button": { "type": "object" },
+          "baseUuid": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
           }
         }
       }
