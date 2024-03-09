@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3Array.json",
+  "title": "Vec3",
+  "description": "",
+  "additionalProperties": false,
+  "type": "array",
+  "items": { "type": "number" },
+  "maxItems": 3,
+  "minItems": 3
+}
