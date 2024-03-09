@@ -273,7 +273,14 @@
             }
           }
         },
-        "harvest": { "type": "boolean" }
+        "harvest": { "type": "boolean" },
+        "chest": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "slots": { "type": "integer" }
+          }
+        }
       }
     }
   }
