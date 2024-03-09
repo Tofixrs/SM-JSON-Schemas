@@ -308,6 +308,7 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+              "extendable": { "type": "boolean" },
               "openings": {
                 "type": "array",
                 "items": {
@@ -370,7 +371,12 @@
           "baseUuid": {
             "type": "string",
             "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
-          }
+          },
+          "title": {
+            "type": "string",
+            "description": "man just stick to one fucking thing just fucking use name instead of this but sm devs use this shit for whatever reason just in one shapeSet"
+          },
+          "lever": { "type": "object" }
         }
       }
     }
