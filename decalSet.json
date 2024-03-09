@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/decalSet.json",
+  "title": "decalSet",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "difSheet": { "type": "string" },
+    "norSheet": { "type": "string" },
+    "agsSheet": { "type": "string" },
+    "decalSet": {
+      "patternProperties": {
+        "^.*$": {
+          "uuid": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+          },
+          "region": { "type": "array", "items": { "type": "integer" } },
+          "material": {
+            "enum": [
+              "Dif",
+              "DifNor",
+              "DifAgs",
+              "DifNorAgs",
+              "DifAgsNor",
+              "NorAgs",
+              "Ags"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
