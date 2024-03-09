@@ -19,5 +19,5 @@
       "description": "Additional data provided to the script available under self.data"
     }
   },
-  "required": ["scriptPath", "scriptClass"]
+  "required": ["class", "file"]
 }
