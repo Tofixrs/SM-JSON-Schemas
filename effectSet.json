@@ -74,7 +74,13 @@
                     "FOV": { "type": "number" },
                     "duration": { "type": "number" },
                     "easing": {
-                      "enum": ["linear", "easeInOutQuad", "easeInOutCirc"]
+                      "enum": [
+                        "linear",
+                        "easeInOutQuad",
+                        "easeInOutCirc",
+                        "easeInQuad",
+                        "easeOutQuad"
+                      ]
                     },
                     "jumpCut": { "type": "boolean" },
                     "label": { "type": "string" },
