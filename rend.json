@@ -16,7 +16,15 @@
           "includes": {
             "type": "array",
             "items": {
-              "enum": ["POSITION", "NORMAL", "UV0", "VERTEX_COLOR", "TANGENT"]
+              "enum": [
+                "POSITION",
+                "NORMAL",
+                "UV0",
+                "VERTEX_COLOR",
+                "TANGENT",
+                "UV1",
+                "TANGENTS"
+              ]
             }
           },
           "subMeshList": {
