@@ -15,6 +15,7 @@
             "type": "string",
             "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
           },
+          "destroyTime": { "type": "number" },
           "density": { "type": "number" },
           "name": { "type": "string" },
           "color": { "type": "string", "pattern": "^(?:[0-9a-fA-F]{2}){3,4}$" },
@@ -273,6 +274,16 @@
               }
             }
           },
+          "spotLight": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "defaultLuminance": { "type": "number" },
+              "effect": {
+                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effect.json"
+              }
+            }
+          },
           "itemStack": { "type": "object" },
           "consumable": { "type": "boolean" },
           "edible": {
@@ -295,7 +306,9 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "side": { "enum": ["+X", "-X", "+Y", "-Y", "+Z", "-Z"] },
+                    "side": {
+                      "enum": ["+X", "-X", "+Y", "-Y", "+Z", "-Z", "Y"]
+                    },
                     "x": { "type": "number" },
                     "y": { "type": "number" },
                     "z": { "type": "number" }
