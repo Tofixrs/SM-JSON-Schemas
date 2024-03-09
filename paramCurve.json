@@ -16,8 +16,13 @@
         "properties": {
           "time": { "type": "number" },
           "value": {
-            "type": "array",
-            "items": { "type": "number" }
+            "oneOf": [
+              {
+                "type": "array",
+                "items": { "type": "number" }
+              },
+              { "type": "number" }
+            ]
           },
           "easing": {
             "enum": [
