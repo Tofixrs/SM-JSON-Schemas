@@ -48,7 +48,14 @@
               },
               "name": { "type": "string" },
               "offset": {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
+                "oneOf": [
+                  {
+                    "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3Array.json"
+                  },
+                  {
+                    "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
+                  }
+                ]
               },
               "direction": {
                 "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
