@@ -19,5 +19,5 @@
       }
     }
   },
-  "required": ["characterSetList"]
+  "required": ["harvestableSetList"]
 }
