@@ -30,6 +30,7 @@
     "ragdollFile": { "type": "string" },
     "enterAudio": { "type": "string" },
     "exitAudio": { "type": "string" },
-    "effect": { "type": "string" }
+    "effect": { "type": "string" },
+    "steerAngle": { "type": "number" }
   }
 }

@@ -352,6 +352,9 @@
             "properties": {
               "length": { "type": "number" },
               "defaultRange": { "type": "number" },
+              "effect": { "type": "string" },
+              "defaultSpeedLevel": { "type": "number" },
+              "force": { "type": "number" },
               "speedLevels": {
                 "type": "array",
                 "items": {
@@ -381,12 +384,35 @@
                     "stiffness": { "type": "number" }
                   }
                 }
-              }
+              },
+              "effect": { "type": "string" }
             }
           },
           "steering": {
             "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/steering.json"
-          }
+          },
+          "gasEngine": {
+            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/engine.json"
+          },
+          "electricEngine": {
+            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/engine.json"
+          },
+          "controller": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "effect": { "type": "string" }
+            }
+          },
+          "sensor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "onEffect": { "type": "string" },
+              "offEffect": { "type": "string" }
+            }
+          },
+          "radio": { "type": "object" }
         }
       }
     }
