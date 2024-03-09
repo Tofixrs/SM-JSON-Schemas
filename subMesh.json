@@ -8,7 +8,8 @@
   "properties": {
     "textureList": { "type": "array", "items": "strings" },
     "material": { "type": "string" },
-    "custom": { "type": "object" }
+    "custom": { "type": "object" },
+    "idx": { "type": "integer" }
   },
   "patternProperties": {
     "^pose[0-9]*$": {
