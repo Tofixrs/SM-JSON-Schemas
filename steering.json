@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/steering.json",
+  "title": "steering",
+  "description": "",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "bones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string" },
+          "offset": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" },
+              "z": { "type": "number" }
+            }
+          },
+          "freeRotation": { "type": "boolean" },
+          "steers": { "type": "boolean" }
+        }
+      }
+    },
+    "ragdollFile": { "type": "string" },
+    "enterAudio": { "type": "string" },
+    "exitAudio": { "type": "string" },
+    "effect": { "type": "string" }
+  }
+}

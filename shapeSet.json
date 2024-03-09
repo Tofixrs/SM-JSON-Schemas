@@ -70,34 +70,7 @@
                 "description": "Used for https://scrapmechanicdocs.com/docs/Game-Script-Environment/Static-Functions/sm.cell#getinteractablesbytag"
               },
               "seat": {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "bones": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "name": { "type": "string" },
-                        "offset": {
-                          "type": "object",
-                          "additionalProperties": false,
-                          "properties": {
-                            "x": { "type": "number" },
-                            "y": { "type": "number" },
-                            "z": { "type": "number" }
-                          }
-                        },
-                        "freeRotation": { "type": "boolean" },
-                        "steers": { "type": "boolean" }
-                      }
-                    }
-                  },
-                  "ragdollFile": { "type": "string" },
-                  "enterAudio": { "type": "string" },
-                  "exitAudio": { "type": "string" }
-                }
+                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/steering.json"
               },
               "steering": {
                 "type": "object",
@@ -181,7 +154,7 @@
               "PropZmmYm",
               "SquareBlock",
               "StaticY",
-              "Static YZX",
+              "StaticYZX",
               "StaticYZmNegZmX",
               "StaticYmZX",
               "StaticYmZmNegXm",
@@ -190,33 +163,7 @@
             ]
           },
           "seat": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "bones": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "properties": {
-                    "name": { "type": "string" },
-                    "offset": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "x": { "type": "number" },
-                        "y": { "type": "number" },
-                        "z": { "type": "number" }
-                      }
-                    },
-                    "freeRotation": { "type": "boolean" }
-                  }
-                }
-              },
-              "ragdollFile": { "type": "string" },
-              "enterAudio": { "type": "string" },
-              "exitAudio": { "type": "string" }
-            }
+            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/steering.json"
           },
           "sticky": { "type": "string" },
           "physicsMaterial": {
@@ -376,7 +323,70 @@
             "type": "string",
             "description": "man just stick to one fucking thing just fucking use name instead of this but sm devs use this shit for whatever reason just in one shapeSet"
           },
-          "lever": { "type": "object" }
+          "lever": { "type": "object" },
+          "legacyId": { "type": "number", "deprecated": true },
+          "preview": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": { "effect": { "type": "string" } }
+          },
+          "logic": { "type": "object" },
+          "timer": { "type": "object" },
+          "tone": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "audio": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": { "event": { "type": "string" } }
+                }
+              }
+            }
+          },
+          "piston": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "length": { "type": "number" },
+              "defaultRange": { "type": "number" },
+              "speedLevels": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "speed": { "type": "number" }
+                  }
+                }
+              }
+            }
+          },
+          "qualityLevel": { "type": "number" },
+          "bearing": { "type": "object" },
+          "spring": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "length": { "type": "number" },
+              "defaultStiffnessLevel": { "type": "number" },
+              "stiffnessLevels": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "stiffness": { "type": "number" }
+                  }
+                }
+              }
+            }
+          },
+          "steering": {
+            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/steering.json"
+          }
         }
       }
     }
