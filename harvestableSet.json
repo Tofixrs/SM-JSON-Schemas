@@ -24,7 +24,7 @@
     "mass": { "type": "integer" },
     "material": { "enum": ["Wood", "Plastic", "Rock"] },
     "script": {
-      "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/oldScriptFromat.json"
+      "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/oldScriptFormat.json"
     },
     "renderable": {
       "oneOf": [{ "type": "string" }]
