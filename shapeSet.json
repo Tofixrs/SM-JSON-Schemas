@@ -210,6 +210,16 @@
               },
               "placementSphereRadius": { "type": "number" }
             }
+          },
+          "spotLight": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "defaultLuminance": { "type": "number" },
+              "effect": {
+                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effect.json"
+              }
+            }
           }
         }
       }
