@@ -10,6 +10,7 @@
       "additionalProperties": false,
       "properties": {
         "parameterList": { "type": "object" },
+        "maxInstances": { "type": "number" },
         "effectList": {
           "type": "array",
           "items": {
@@ -42,7 +43,9 @@
               },
               "attached": { "type": "boolean" },
               "delay": { "type": "number" },
-              "parameters": { "type": "array", "items": { "type": "string" } },
+              "parameters": {
+                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effectParams.json"
+              },
               "cameraTrack": {
                 "type": "array",
                 "items": {

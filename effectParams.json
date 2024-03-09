@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effectParams.json",
+  "title": "effectParams",
+  "description": "",
+  "oneOf": [
+    { "type": "string" },
+    {
+      "type": "object",
+      "patternProperies": {
+        "^.*$": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "condition": {
+                "enum": ["greater", "equal", "less"]
+              },
+              "value": { "type": "number" },
+              "name": { "type": "string" },
+              "parameters": {
+                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effectSet.json"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
