@@ -18,9 +18,12 @@
           "name": { "type": "string" },
           "showInEditor": { "type": "boolean" },
           "removable": { "type": "boolean" },
-          "type": { "enum": ["filler", "logfiles"] },
+          "disableClutter": { "type": "boolean" },
+          "destroyTime": { "type": "number" },
+          "type": { "enum": ["filler", "logfiles", "farm", "mature"] },
           "slope": { "enum": ["rotate"] },
           "col": { "type": "string" },
+          "size": { "type": "integer" },
           "color": {
             "oneOf": [
               {
