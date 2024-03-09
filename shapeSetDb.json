@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/shapeSetDb.json",
+  "title": "shapeSetDb",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "shapeSetList": {
+      "description": "",
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["shapeSetList"]
+}
