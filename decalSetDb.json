@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/decalSetDb.json",
+  "title": "decalSetDb",
+  "description": "",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "decalSetList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "set": { "type": "string" },
+          "category": { "type": "string" }
+        },
+        "required": ["name"]
+      }
+    }
+  },
+  "required": ["decalSetList"]
+}
