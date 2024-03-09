@@ -209,7 +209,9 @@
                   }
                 }
               },
-              "ragdollFile": { "type": "string" }
+              "ragdollFile": { "type": "string" },
+              "enterAudio": { "type": "string" },
+              "exitAudio": { "type": "string" }
             }
           },
           "characterShape": {
