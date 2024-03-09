@@ -4,7 +4,7 @@
   "title": "effectParams",
   "description": "",
   "oneOf": [
-    { "type": "string" },
+    { "type": "array", "items": { "type": "string" } },
     {
       "type": "object",
       "patternProperies": {
