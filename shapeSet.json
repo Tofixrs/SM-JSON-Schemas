@@ -37,7 +37,8 @@
               "x": { "type": "number" },
               "y": { "type": "number" },
               "z": { "type": "number" },
-              "col": { "type": "string" }
+              "col": { "type": "string" },
+              "margin": { "type": "number" }
             }
           },
           "scripted": {
