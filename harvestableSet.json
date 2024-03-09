@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/harvestableSet.json",
+  "title": "harvestableSet",
+  "description": "",
+  "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "name": { "type": "string" },
+    "col": { "type": "string" },
+    "color": { "oneOf": [{ "type": "array", "items": { "type": "string" } }] },
+    "physics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mass": { "type": "integer" },
+        "material": { "enum": ["Wood", "Plastic", "Rock"] }
+      }
+    },
+    "mass": { "type": "integer" },
+    "material": { "enum": ["Wood", "Plastic", "Rock"] },
+    "script": {
+      "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/oldScriptFromat.json"
+    },
+    "renderable": {
+      "oneOf": [{ "type": "string" }]
+    }
+  }
+}
