@@ -145,6 +145,7 @@
           },
           "ratings": {
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "density": { "type": "integer" },
               "durability": { "type": "integer" },
@@ -160,6 +161,7 @@
           "stackSize": { "type": "integer" },
           "restrictions": {
             "type": "object",
+            "additionalProperties": false,
             "properties": {
               "destructable": { "type": "boolean" },
               "erasable": { "type": "boolean" }
@@ -212,7 +214,7 @@
               "placementSphereRadius": { "type": "number" }
             }
           },
-          "spotLight": {
+          "spotlight": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
