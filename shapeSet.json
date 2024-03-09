@@ -4,7 +4,6 @@
   "title": "shapeSet",
   "description": "",
   "type": "object",
-  "additionalProperties": false,
   "properties": {
     "partList": {
       "type": "array",
@@ -173,7 +172,8 @@
               "buildable": { "type": "boolean" },
               "liftable": { "type": "boolean" },
               "convertibleToDynamic": { "type": "boolean" },
-              "paintable": { "type": "boolean" }
+              "paintable": { "type": "boolean" },
+              "usable": { "type": "boolean" }
             }
           },
           "showInInventory": { "type": "boolean" },
