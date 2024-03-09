@@ -19,7 +19,7 @@
               "value": { "type": "number" },
               "name": { "type": "string" },
               "parameters": {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effectSet.json"
+                "$ref": "#"
               }
             }
           }
