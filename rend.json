@@ -20,12 +20,17 @@
             }
           },
           "subMeshMap": {
+            "type": "object",
             "patternProperties": {
               "^.*$": {
-                "material": { "enum": ["DifAsgNorAo"] },
-                "textureList": {
-                  "type": "array",
-                  "items": { "type": "string" }
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "material": { "enum": ["DifAsgNorAo"] },
+                  "textureList": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
                 }
               }
             }
