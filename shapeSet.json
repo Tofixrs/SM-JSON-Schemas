@@ -81,7 +81,8 @@
                             "z": { "type": "number" }
                           }
                         },
-                        "freeRotation": { "type": "boolean" }
+                        "freeRotation": { "type": "boolean" },
+                        "steers": { "type": "boolean" }
                       }
                     }
                   },
