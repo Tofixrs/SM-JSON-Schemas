@@ -11,6 +11,29 @@
       "properties": {
         "parameterList": { "type": "object" },
         "maxInstances": { "type": "number" },
+        "parameterCurves": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "loop": { "type": "number" },
+            "speed": { "type": "number" },
+            "timeline": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "time": { "type": "number" },
+                "value": {
+                  "type": "array",
+                  "items": { "type": "number" }
+                },
+                "easing": {
+                  "enum": ["easeInQuad", "easeOutQuad"]
+                }
+              }
+            }
+          }
+        },
         "effectList": {
           "type": "array",
           "items": {
