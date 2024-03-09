@@ -326,7 +326,11 @@
             "properties": {
               "length": { "type": "number" }
             }
-          }
+          },
+          "survivalThruster": { "type": "object" },
+          "survivalSequence": { "type": "object" },
+          "survivalSensor": { "type": "object" },
+          "survivalPiston": { "type": "object" }
         }
       }
     }
