@@ -26,11 +26,21 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                  "material": { "enum": ["DifAsgNorAo"] },
+                  "material": {
+                    "oneOf": [
+                      {
+                        "enum": ["DifAsgNorAo", "UVAnimDifAsgNor", "DifAsgNor"]
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
                   "textureList": {
                     "type": "array",
                     "items": { "type": "string" }
-                  }
+                  },
+                  "custom": { "type": "object" }
                 }
               }
             }

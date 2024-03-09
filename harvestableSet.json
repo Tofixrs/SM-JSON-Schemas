@@ -23,6 +23,9 @@
           "type": { "enum": ["filler", "logfiles", "farm", "mature"] },
           "slope": { "enum": ["rotate"] },
           "col": { "type": "string" },
+          "col_box": {
+            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
+          },
           "size": { "type": "integer" },
           "color": {
             "oneOf": [
