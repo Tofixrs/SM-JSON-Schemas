@@ -15,20 +15,26 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "loop": { "type": "number" },
-            "speed": { "type": "number" },
-            "timeline": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "additionalProperties": false,
-                "time": { "type": "number" },
-                "value": {
+            "2dOffset": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "loop": { "type": "number" },
+                "speed": { "type": "number" },
+                "timeline": {
                   "type": "array",
-                  "items": { "type": "number" }
-                },
-                "easing": {
-                  "enum": ["easeInQuad", "easeOutQuad"]
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "time": { "type": "number" },
+                    "value": {
+                      "type": "array",
+                      "items": { "type": "number" }
+                    },
+                    "easing": {
+                      "enum": ["easeInQuad", "easeOutQuad"]
+                    }
+                  }
                 }
               }
             }
