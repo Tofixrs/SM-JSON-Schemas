@@ -14,11 +14,8 @@
         "parameterCurves": {
           "type": "object",
           "additionalProperties": false,
-          "properties": {
-            "2dOffset": {
-              "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/paramCurve.json"
-            },
-            "offsetRotation": {
+          "patternProperties": {
+            "^.*$": {
               "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/paramCurve.json"
             }
           }
