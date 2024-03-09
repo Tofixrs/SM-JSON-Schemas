@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/harvestableSetList.json",
+  "title": "harvestableSetList",
+  "description": "",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "harvestableSetList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string" },
+          "categories": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["name"]
+      }
+    }
+  },
+  "required": ["characterSetList"]
+}
