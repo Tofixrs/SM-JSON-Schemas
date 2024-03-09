@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/nodeList.json",
+  "title": "nodeList",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "nodeList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "The first tag is considered the primary tag and should be unique"
+          },
+          "color": { "type": "array", "items": { "type": "number" } },
+          "billboardColor": { "type": "array", "items": { "type": "number" } },
+          "params": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "type": { "enum": ["bool", "string", "effect", "connections"] },
+                "default": {
+                  "type": [
+                    "boolean",
+                    "string",
+                    "integer",
+                    "number",
+                    "object",
+                    "array",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "renderable": { "type": "string" },
+          "optionalParams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "type": { "enum": ["bool", "string", "effect", "connections"] },
+                "default": {
+                  "type": [
+                    "boolean",
+                    "string",
+                    "integer",
+                    "number",
+                    "object",
+                    "array",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
