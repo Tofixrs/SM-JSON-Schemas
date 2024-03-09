@@ -87,7 +87,7 @@
             "enable": { "type": "boolean" },
             "defaultColor": {
               "type": "string",
-              "pattern": "^(?:[0-9a-fA-F]{3}){1,2}$"
+              "pattern": "^(?:[0-9a-fA-F]{2}){3}$"
             },
             "effect": {
               "$ref": "https://raw.githubusercontent/com/Tofixrs/SM-JSON-Schemas/master/effect.json"
