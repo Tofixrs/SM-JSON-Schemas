@@ -20,7 +20,14 @@
             "items": { "type": "number" }
           },
           "easing": {
-            "enum": ["easeInQuad", "easeOutQuad"]
+            "enum": [
+              "easeInQuad",
+              "easeOutQuad",
+              "easeOutElastic",
+              "easeInElastic",
+              "easeInBack",
+              "easeOutBack"
+            ]
           }
         }
       }
