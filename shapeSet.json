@@ -234,7 +234,8 @@
               "foodGain": { "type": "number" },
               "waterGain": { "type": "number" }
             }
-          }
+          },
+          "carryItem": { "type": "boolean" }
         }
       }
     }
