@@ -17,10 +17,28 @@
             "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
           },
           "name": { "type": "string" },
-          "renderable": { "type": "string" },
           "color": { "type": "string", "pattern": "^(?:[0-9a-fA-F]{2}){3,4}$" },
           "box": {
             "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
+          },
+          "cylinder": {
+            "type": "object",
+            "properties": {
+              "diameter": { "type": "number" },
+              "depth": { "type": "number" },
+              "margin": { "type": "number" },
+              "axis": { "enum": ["Y", "X", "Z"] }
+            }
+          },
+          "hull": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" },
+              "z": { "type": "number" },
+              "col": { "type": "string" }
+            }
           },
           "scripted": {
             "additionalProperties": false,
@@ -95,7 +113,7 @@
               "PropYmZmm",
               "PropYmm",
               "PropYmmNegYmm",
-              "PropYmmNegYm...Z",
+              "PropYmmNegYmmZ",
               "PropYmmZ",
               "PropYmmZm",
               "PropZ",
@@ -146,16 +164,15 @@
               "erasable": { "type": "boolean" }
             }
           },
-          "cylinder": {
-            "type": "object",
-            "properties": {
-              "diameter": { "type": "number" },
-              "depth": { "type": "number" },
-              "margin": { "type": "number" },
-              "axis": { "enum": ["Y", "X", "Z"] }
-            }
-          },
-          "showInInventory": { "type": "boolean" }
+          "showInInventory": { "type": "boolean" },
+          "renderable": {
+            "oneOf": [
+              { "type": "string" },
+              {
+                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/rend.json"
+              }
+            ]
+          }
         }
       }
     }
