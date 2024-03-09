@@ -19,6 +19,8 @@
             }
           }
         },
+        "startDistance": { "type": "number" },
+        "stopDistance": { "type": "number" },
         "effectList": {
           "type": "array",
           "items": {
