@@ -53,10 +53,10 @@
             }
           },
           "unit": {
-            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/NewScriptFormat.json"
+            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/newScriptFormat.json"
           },
           "character": {
-            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/NewScriptFormat.json"
+            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/newScriptFormat.json"
           },
           "movement": {
             "type": "object",
