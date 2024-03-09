@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/shapeSet.json",
+  "title": "shapeSet",
+  "description": "",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "partList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+          },
+          "name": { "type": "string" },
+          "renderable": { "type": "string" },
+          "color": { "type": "string", "pattern": "^(?:[0-9a-fA-F]{2}){3,4}$" },
+          "box": {
+            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
+          },
+          "scripted": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+              "filename": {
+                "type": "string",
+                "description": "Path to the script"
+              },
+              "classname": {
+                "type": "string",
+                "description": "The class that the game will inject all the callbacks and properties into"
+              },
+              "data": {
+                "type": "object",
+                "description": "Additional data provided to the script available under self.data"
+              }
+            },
+            "required": ["filename", "classname"]
+          },
+          "rotationSet": {
+            "enum": [
+              "Lift",
+              "PackingLamp",
+              "PropFalseYNegY",
+              "PropFull",
+              "PropFullMinus NegY",
+              "PropFullMinus NegZ",
+              "PropFullMinusZ",
+              "PropFullYmmNegYmm",
+              "PropNegY",
+              "PropNegYNegZ",
+              "PropNegYX",
+              "PropNegYXNegX",
+              "PropNegYmZX",
+              "PropNegYmmX",
+              "PropNegZ",
+              "PropX",
+              "PropXNegZm",
+              "PropXmm",
+              "PropY",
+              "PropYNegY",
+              "PropYNegYZ",
+              "PropYNegYZNegX",
+              "PropYNegYZNegZ",
+              "PropYNegYZX",
+              "PropYNegZ",
+              "PropYNegZXNegX",
+              "PropYX",
+              "PropYXmNegXm",
+              "PropYZ",
+              "PropYZNegX",
+              "PropYZNegXm",
+              "PropYZNegZNegX",
+              "PropYZNegZX",
+              "PropYZX",
+              "PropYZXNegX",
+              "PropYZXmNegXm",
+              "PropYZm",
+              "PropYZmNegZm",
+              "PropYZmNegZmX",
+              "PropYZmX",
+              "PropYmNegYm",
+              "PropYmNegYmX",
+              "PropYmNegYmZ",
+              "PropYmNegYmZX",
+              "PropYmXm",
+              "PropYmZ",
+              "PropYmZX",
+              "PropYmZm",
+              "PropYmZmXm",
+              "PropYmZmm",
+              "PropYmm",
+              "PropYmmNegYmm",
+              "PropYmmNegYm...Z",
+              "PropYmmZ",
+              "PropYmmZm",
+              "PropZ",
+              "PropZNegY",
+              "PropZNegZ",
+              "PropZX",
+              "PropZXNegX",
+              "PropZY",
+              "PropZYNegX",
+              "PropZmX",
+              "PropZmY",
+              "PropZmYm",
+              "PropZmmNegZmm",
+              "PropZmmYm",
+              "SquareBlock",
+              "StaticY",
+              "Static YZX",
+              "StaticYZmNegZmX",
+              "StaticYmZX",
+              "StaticYmZmNegXm",
+              "StaticYmZmXm",
+              "StaticYmmZmmXmm"
+            ],
+            "sticky": { "type": "string" },
+            "physicsMaterial": {
+              "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/materials.json"
+            },
+            "ratings": {
+              "density": { "type": "integer" },
+              "durability": { "type": "integer" },
+              "friction": { "type": "integer" },
+              "buoyancy": { "type": "integer" }
+            },
+            "flammable": { "type": "boolean" }
+          }
+        }
+      }
+    }
+  }
+}
