@@ -13,6 +13,12 @@
         "properties": {
           "maxViewDistance": { "type": "integer" },
           "mesh": { "type": "string" },
+          "includes": {
+            "type": "array",
+            "items": {
+              "enum": ["POSITION", "NORMAL", "UV0", "VERTEX_COLOR", "TANGENT"]
+            }
+          },
           "subMeshMap": {
             "patternProperties": {
               "^.*$": {
