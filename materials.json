@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/materials.json",
+  "title": "Materials",
+  "description": "",
+  "enum": [
+    "Wood",
+    "Plastic",
+    "Rock",
+    "Grass",
+    "Cardboard",
+    "Dirt",
+    "Fabric",
+    "Fence",
+    "Foilage",
+    "Fruit",
+    "Glass",
+    "Grass",
+    "Gravel",
+    "Mechanical",
+    "Metal",
+    "Potatio",
+    "Sand",
+    "SledgeHammer",
+    "Tape",
+    "Water",
+    "Food"
+  ]
+}

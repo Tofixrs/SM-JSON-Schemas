@@ -20,7 +20,10 @@
           "removable": { "type": "boolean" },
           "disableClutter": { "type": "boolean" },
           "destroyTime": { "type": "number" },
-          "type": { "enum": ["filler", "logfiles", "farm", "mature"] },
+          "type": {
+            "type": "string",
+            "description": "Only used for https://scrapmechanicdocs.com/docs/Game-Script-Environment/Static-Functions/sm.ai/#getclosesttree"
+          },
           "slope": { "enum": ["rotate"] },
           "col": { "type": "string" },
           "col_box": {
@@ -44,11 +47,15 @@
             "additionalProperties": false,
             "properties": {
               "mass": { "type": "integer" },
-              "material": { "enum": ["Wood", "Plastic", "Rock", "Grass"] }
+              "material": {
+                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/materials.json"
+              }
             }
           },
           "mass": { "type": "integer" },
-          "material": { "enum": ["Wood", "Plastic", "Rock", "Grass"] },
+          "material": {
+            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/materials.json"
+          },
           "script": {
             "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/oldScriptFormat.json"
           },
