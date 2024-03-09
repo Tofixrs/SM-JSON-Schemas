@@ -16,27 +16,10 @@
           "additionalProperties": false,
           "properties": {
             "2dOffset": {
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "loop": { "type": "number" },
-                "speed": { "type": "number" },
-                "timeline": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "time": { "type": "number" },
-                    "value": {
-                      "type": "array",
-                      "items": { "type": "number" }
-                    },
-                    "easing": {
-                      "enum": ["easeInQuad", "easeOutQuad"]
-                    }
-                  }
-                }
-              }
+              "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/paramCurve.json"
+            },
+            "offsetRotation": {
+              "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/paramCurve.json"
             }
           }
         },
