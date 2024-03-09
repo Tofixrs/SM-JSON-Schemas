@@ -3,13 +3,13 @@
   "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/harvestableSet.json",
   "title": "harvestableSet",
   "description": "",
-  "additionalProperties": false,
   "type": "object",
   "properties": {
     "harvestableList": {
       "type": "array",
       "items": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "uuid": {
             "type": "string",
