@@ -13,7 +13,6 @@
         "maxInstances": { "type": "number" },
         "parameterCurves": {
           "type": "object",
-          "additionalProperties": false,
           "patternProperties": {
             "^.*$": {
               "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/paramCurve.json"
@@ -55,6 +54,9 @@
                 ]
               },
               "direction": {
+                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
+              },
+              "rotation": {
                 "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
               },
               "attached": { "type": "boolean" },
