@@ -223,6 +223,17 @@
                 "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effect.json"
               }
             }
+          },
+          "itemStack": { "type": "object" },
+          "consumable": { "type": "boolean" },
+          "edible": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "hpGain": { "type": "number" },
+              "foodGain": { "type": "number" },
+              "waterGain": { "type": "number" }
+            }
           }
         }
       }
