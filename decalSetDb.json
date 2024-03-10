@@ -14,7 +14,7 @@
           "set": { "$ref": "./smPath.json" },
           "category": { "type": "string" }
         },
-        "required": ["name"]
+        "required": ["set"]
       }
     }
   },

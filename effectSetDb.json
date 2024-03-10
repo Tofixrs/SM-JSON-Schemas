@@ -4,9 +4,8 @@
   "title": "effectSetDb",
   "description": "",
   "type": "object",
-  "additionalProperties": false,
   "properties": {
-    "characterSetList": {
+    "effectSetList": {
       "description": "",
       "type": "array",
       "items": {
