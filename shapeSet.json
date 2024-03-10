@@ -381,10 +381,10 @@
             "$ref": "./steering.json"
           },
           "gasEngine": {
-            "$ref": "./engine.json"
+            "$ref": "#/definitions/engine"
           },
           "electricEngine": {
-            "$ref": "./engine.json"
+            "$ref": "#/definitions/engine"
           },
           "controller": {
             "type": "object",
