@@ -3,5 +3,5 @@
     "$id": "./hexCode.json",
     "title": "Hex Code",
     "type": "string",
-    "pattern": "^#(?:[0-9a-fA-F]{2}){3,4}$"
+    "pattern": "^(?:[0-9a-fA-F]{2}){3,4}$"
 }
