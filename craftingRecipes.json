@@ -1,6 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "./craftingRecipes.json",
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/0.6.6-backport/craftingRecipes.json",
   "title": "CraftingRecipes",
   "description": "",
   "type": "array",
@@ -9,8 +9,7 @@
     "additionalProperties": false,
     "properties": {
       "itemId": {
-        "type": "string",
-        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "$ref": "./uuid.json",
         "description": "item to craft"
       },
       "quantity": {
@@ -34,8 +33,8 @@
               "minimum": 1
             },
             "itemId": {
-              "type": "string",
-              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+              "$ref": "./uuid.json",
+              "description": "item needed"
             }
           }
         }
@@ -52,9 +51,8 @@
               "minimum": 1
             },
             "itemId": {
-              "type": "string",
-              "format": "uuid",
-              "description": "The item uuid"
+              "$ref": "./uuid.json",
+              "description": "The item uuid u will get as extra"
             }
           }
         }

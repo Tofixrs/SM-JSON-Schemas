@@ -1,7 +1,7 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "./effect.json",
-  "title": "Effect",
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "title": "Effects",
   "description": "All the effects in the game",
   "anyOf": [
     { "type": "string" },

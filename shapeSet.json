@@ -28,6 +28,24 @@
         "usable": { "type": "boolean" },
         "connectable": { "type": "boolean" }
       }
+    },
+    "engine": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "gears": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "velocity": { "type": "number" },
+              "power": { "type": "number" }
+            }
+          }
+        },
+        "effect": { "type": "string" }
+      }
     }
   },
   "properties": {
@@ -37,19 +55,12 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "uuid": {
-            "type": "string",
-            "format": "uuid"
-          },
+          "uuid": { "$ref": "./uuid.json" },
           "destroyTime": { "type": "number" },
           "density": { "type": "number" },
           "name": { "type": "string" },
-          "color": {
-            "$ref": "./hexColor.json"
-          },
-          "box": {
-            "$ref": "./vec3.json"
-          },
+          "color": { "$ref": "./hexColor.json" },
+          "box": { "$ref": "./vec3.json" },
           "cylinder": {
             "type": "object",
             "properties": {
@@ -81,9 +92,7 @@
             "additionalProperties": false,
             "type": "object",
             "properties": {
-              "filename": {
-                "$ref": "./smPath.json"
-              },
+              "filename": { "$ref": "./smPath.json" },
               "classname": {
                 "type": "string",
                 "description": "The class that the game will inject all the callbacks and properties into"
@@ -96,9 +105,7 @@
                 "type": "string",
                 "description": "Used for https://scrapmechanicdocs.com/docs/Game-Script-Environment/Static-Functions/sm.cell#getinteractablesbytag"
               },
-              "seat": {
-                "$ref": "./steering.json"
-              },
+              "seat": { "$ref": "./steering.json" },
               "steering": {
                 "type": "object",
                 "additionalProperties": false,
@@ -193,34 +200,21 @@
             "$ref": "./steering.json"
           },
           "sticky": { "type": "string" },
-          "physicsMaterial": {
-            "$ref": "./materials.json"
-          },
-          "ratings": { "$ref": "objRatings" },
+          "physicsMaterial": { "$ref": "./materials.json" },
+          "ratings": { "$ref": "#/definitions/objRatings" },
           "flammable": { "type": "boolean" },
-          "autoTool": {
-            "type": "string",
-            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
-          },
+          "autoTool": { "$ref": "./uuid.json" },
           "stackSize": { "type": "integer" },
-          "restrictions": { "$ref": "objRestrictions" },
+          "restrictions": { "$ref": "#/definitions/objRestrictions" },
           "showInInventory": { "type": "boolean" },
           "renderable": {
-            "oneOf": [
-              { "type": "string" },
-              {
-                "$ref": "./rend.json"
-              }
-            ]
+            "oneOf": [{ "type": "string" }, { "$ref": "./rend.json" }]
           },
           "characterShape": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "characterUuid": {
-                "type": "string",
-                "format": "uuid"
-              },
+              "characterUuid": { "$ref": "./uuid.json" },
               "placementSphereRadius": { "type": "number" }
             }
           },
@@ -229,9 +223,7 @@
             "additionalProperties": false,
             "properties": {
               "defaultLuminance": { "type": "number" },
-              "effect": {
-                "$ref": "./effect.json"
-              }
+              "effect": { "$ref": "./effect.json" }
             }
           },
           "spotLight": {
@@ -239,9 +231,7 @@
             "additionalProperties": false,
             "properties": {
               "defaultLuminance": { "type": "number" },
-              "effect": {
-                "$ref": "./effect.json"
-              }
+              "effect": { "$ref": "./effect.json" }
             }
           },
           "itemStack": { "type": "object" },
@@ -310,20 +300,14 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "harvestable": {
-                "type": "string",
-                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
-              }
+              "harvestable": { "$ref": "./uuid.json" }
             }
           },
           "friction": { "type": "number" },
           "restitution": { "type": "number" },
           "harvestablePart": { "type": "boolean" },
           "button": { "type": "object" },
-          "baseUuid": {
-            "type": "string",
-            "format": "uuid"
-          },
+          "baseUuid": { "$ref": "./uuid.json" },
           "title": {
             "type": "string",
             "description": "man just stick to one fucking thing just fucking use name instead of this but sm devs use this shit for whatever reason just in one shapeSet"
@@ -397,10 +381,10 @@
             "$ref": "./steering.json"
           },
           "gasEngine": {
-            "$ref": "./engine.json"
+            "$ref": "#/definitions/engine"
           },
           "electricEngine": {
-            "$ref": "./engine.json"
+            "$ref": "#/definitions/engine"
           },
           "controller": {
             "type": "object",
@@ -445,34 +429,33 @@
         "type": "object",
         "properties": {
           "uuid": {
-            "type": "string",
-            "format": "uuid"
+            "$ref": "./uuid.json"
           },
           "name": { "type": "string" },
-          "dif": { 
+          "dif": {
             "$ref": "./smPath.json",
             "title": "path to DIF texture"
           },
-          "asg": { 
+          "asg": {
             "$ref": "./smPath.json",
             "title": "path to ASG texture"
           },
-          "nor": { 
+          "nor": {
             "$ref": "./smPath.json",
             "title": "path to NOR texture"
           },
           "tiling": {
-             "type": "integer",
+            "type": "integer",
             "description": "Amount of blocks of Tiling the texture represents"
           },
           "color": { "$ref": "./hexColor.json" },
           "physicsMaterial": { "$ref": "./materials.json" },
-          "ratings": { "$ref": "objRatings" },
+          "ratings": { "$ref": "#/definitions/objRatings" },
           "friction": { "type": "number" },
           "flammable": { "type": "boolean" },
           "density": { "type": "number" },
           "qualityLevel": { "type": "number" },
-          "restrictions": { "$ref": "objRestrictions" },
+          "restrictions": { "$ref": "#/definitions/objRestrictions" },
           "alpha": { "type": "boolean" },
           "glass": { "type": "boolean" },
           "max_stack_count": { "type": "integer" }

@@ -1,9 +1,47 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "https://json-schema.org/draft-07/schema",
   "$id": "./characterSet.json",
   "title": "characterSet",
   "description": "",
   "type": "object",
+  "definitions": {
+    "hit": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "col": {
+          "type": "string"
+        },
+        "offset": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      },
+      "required": ["col", "offset"]
+    },
+    "script": {
+      "additionalProperties": false,
+      "type": "object",
+      "properties": {
+        "scriptPath": {
+          "$ref": "./smPath.json",
+          "description": "Path to the script"
+        },
+        "scriptClass": {
+          "type": "string",
+          "description": "The class that the game will inject all the callbacks and properties into"
+        },
+        "data": {
+          "type": "object",
+          "description": "Additional data provided to the script available under self.data"
+        }
+      },
+      "required": ["scriptPath", "scriptClass"]
+    }
+  },
   "properties": {
     "characters": {
       "type": "array",
@@ -11,26 +49,17 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "uuid": {
-            "type": "string",
-            "format": "uuid"
-          },
+          "uuid": { "$ref": "./uuid.json" },
           "renderables": {
             "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "items": { "$ref": "./smPath.json" }
           },
-          "ragdoll": {
-            "type": "string"
-          },
+          "ragdoll": { "$ref": "./smPath.json" },
           "tumble": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "col": {
-                "type": "string"
-              },
+              "col": { "$ref": "./smPath.json" },
               "offset": {
                 "type": "array",
                 "items": {
@@ -44,20 +73,12 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "crouch": {
-                "$ref": "./hit.json"
-              },
-              "stand": {
-                "$ref": "./hit.json"
-              }
+              "crouch": { "$ref": "#/definitions/hit" },
+              "stand": { "$ref": "#/definitions/hit" }
             }
           },
-          "unit": {
-            "$ref": "./charSetScriptFormat.json"
-          },
-          "character": {
-            "$ref": "./charSetScriptFormat.json"
-          },
+          "unit": { "$ref": "#/definitions/script" },
+          "character": { "$ref": "#/definitions/script" },
           "movement": {
             "type": "object",
             "properties": {
@@ -80,8 +101,7 @@
           },
           "mass": { "type": "number" },
           "characterShapeUuid": {
-            "type": "string",
-            "format": "uuid"
+            "$ref": "./uuid.json"
           },
           "paint": {
             "enable": { "type": "boolean" },
@@ -89,7 +109,7 @@
               "$ref": "./hexColor.json"
             },
             "effect": {
-              "$ref": "https://raw.githubusercontent/com/Tofixrs/SM-JSON-Schemas/master/effect.json"
+              "$ref": "./effect.json"
             }
           },
           "sound": {

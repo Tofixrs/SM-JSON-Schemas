@@ -1,17 +1,14 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "https://json-schema.org/draft-07/schema",
   "$id": "./characterSetDb.json",
   "title": "CharacterSets",
   "description": "",
   "type": "object",
-  "additionalProperties": false,
   "properties": {
     "characterSetList": {
       "description": "",
       "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "items": { "$ref": "./smPath.json" }
     }
   },
   "required": ["characterSetList"]
