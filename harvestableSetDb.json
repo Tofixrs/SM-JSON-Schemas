@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/harvestableSetList.json",
+  "$id": "./harvestableSetList.json",
   "title": "harvestableSetList",
   "description": "",
   "type": "object",

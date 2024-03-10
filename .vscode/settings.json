@@ -1,0 +1,10 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "test.json"
+            ],
+            "url": "./shapeSet.json"
+        }
+    ]
+}

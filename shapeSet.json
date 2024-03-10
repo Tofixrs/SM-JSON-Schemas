@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/shapeSet.json",
+  "$id": "./shapeSet.json",
   "title": "shapeSet",
   "description": "",
   "type": "object",
@@ -13,14 +13,16 @@
         "properties": {
           "uuid": {
             "type": "string",
-            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            "format": "uuid"
           },
           "destroyTime": { "type": "number" },
           "density": { "type": "number" },
           "name": { "type": "string" },
-          "color": { "type": "string", "pattern": "^(?:[0-9a-fA-F]{2}){3,4}$" },
+          "color": {
+            "$ref": "./hexColor.json"
+          },
           "box": {
-            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
+            "$ref": "./vec3.json"
           },
           "cylinder": {
             "type": "object",
@@ -54,8 +56,7 @@
             "type": "object",
             "properties": {
               "filename": {
-                "type": "string",
-                "description": "Path to the script"
+                "$ref": "./smPath.json"
               },
               "classname": {
                 "type": "string",
@@ -70,7 +71,7 @@
                 "description": "Used for https://scrapmechanicdocs.com/docs/Game-Script-Environment/Static-Functions/sm.cell#getinteractablesbytag"
               },
               "seat": {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/steering.json"
+                "$ref": "./steering.json"
               },
               "steering": {
                 "type": "object",
@@ -163,11 +164,11 @@
             ]
           },
           "seat": {
-            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/steering.json"
+            "$ref": "./steering.json"
           },
           "sticky": { "type": "string" },
           "physicsMaterial": {
-            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/materials.json"
+            "$ref": "./materials.json"
           },
           "ratings": {
             "type": "object",
@@ -204,7 +205,7 @@
             "oneOf": [
               { "type": "string" },
               {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/rend.json"
+                "$ref": "./rend.json"
               }
             ]
           },
@@ -214,7 +215,7 @@
             "properties": {
               "characterUuid": {
                 "type": "string",
-                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+                "format": "uuid"
               },
               "placementSphereRadius": { "type": "number" }
             }
@@ -225,7 +226,7 @@
             "properties": {
               "defaultLuminance": { "type": "number" },
               "effect": {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effect.json"
+                "$ref": "./effect.json"
               }
             }
           },
@@ -235,7 +236,7 @@
             "properties": {
               "defaultLuminance": { "type": "number" },
               "effect": {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effect.json"
+                "$ref": "./effect.json"
               }
             }
           },
@@ -317,7 +318,7 @@
           "button": { "type": "object" },
           "baseUuid": {
             "type": "string",
-            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            "format": "uuid"
           },
           "title": {
             "type": "string",
@@ -389,13 +390,13 @@
             }
           },
           "steering": {
-            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/steering.json"
+            "$ref": "./steering.json"
           },
           "gasEngine": {
-            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/engine.json"
+            "$ref": "./engine.json"
           },
           "electricEngine": {
-            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/engine.json"
+            "$ref": "./engine.json"
           },
           "controller": {
             "type": "object",

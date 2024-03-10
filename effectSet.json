@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effectSet.json",
+  "$id": "./effectSet.json",
   "title": "effectSet",
   "description": "",
   "type": "object",
@@ -15,7 +15,7 @@
           "type": "object",
           "patternProperties": {
             "^.*$": {
-              "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/paramCurve.json"
+              "$ref": "./paramCurve.json"
             }
           }
         },
@@ -48,24 +48,24 @@
               "offset": {
                 "oneOf": [
                   {
-                    "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3Array.json"
+                    "$ref": "./vec3Array.json"
                   },
                   {
-                    "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
+                    "$ref": "./vec3.json"
                   }
                 ]
               },
               "direction": {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
+                "$ref": "./vec3.json"
               },
               "rotation": {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
+                "$ref": "./vec3.json"
               },
               "attached": { "type": "boolean" },
               "delay": { "type": "number" },
               "duration": { "type": "number" },
               "parameters": {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/effectParams.json"
+                "$ref": "./effectParams.json"
               },
               "cameraTrack": {
                 "type": "array",
@@ -88,10 +88,10 @@
                     "label": { "type": "string" },
                     "overrideFOV": { "type": "boolean" },
                     "position": {
-                      "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3Array.json"
+                      "$ref": "./vec3Array.json"
                     },
                     "rotation": {
-                      "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3Array.json"
+                      "$ref": "./vec3Array.json"
                     },
                     "tangents": {
                       "type": "array",
@@ -100,10 +100,10 @@
                         "additionalProperties": false,
                         "properties": {
                           "position": {
-                            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3Array.json"
+                            "$ref": "./vec3Array.json"
                           },
                           "rotation": {
-                            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3Array.json"
+                            "$ref": "./vec3Array.json"
                           }
                         }
                       }

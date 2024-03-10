@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/harvestableSet.json",
+  "$id": "./harvestableSet.json",
   "title": "harvestableSet",
   "description": "",
   "type": "object",
@@ -13,7 +13,7 @@
         "properties": {
           "uuid": {
             "type": "string",
-            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            "format": "uuid"
           },
           "name": { "type": "string" },
           "showInEditor": { "type": "boolean" },
@@ -27,7 +27,7 @@
           "slope": { "enum": ["rotate"] },
           "col": { "type": "string" },
           "col_box": {
-            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json"
+            "$ref": "./vec3.json"
           },
           "size": { "type": "integer" },
           "color": {
@@ -35,8 +35,7 @@
               {
                 "type": "array",
                 "items": {
-                  "type": "string",
-                  "pattern": "^(?:[0-9a-fA-F]{2}){3,4}$"
+                  "$ref": "./hexColor.json"
                 }
               },
               { "type": "string", "pattern": "^(?:[0-9a-fA-F]{2}){3,4}$" }
@@ -48,13 +47,13 @@
             "properties": {
               "mass": { "type": "integer" },
               "material": {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/materials.json"
+                "$ref": "./materials.json"
               }
             }
           },
           "mass": { "type": "integer" },
           "material": {
-            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/materials.json"
+            "$ref": "./materials.json"
           },
           "script": {
             "type": "object",
@@ -78,7 +77,7 @@
             "oneOf": [
               { "type": "string" },
               {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/rend.json"
+                "$ref": "./rend.json"
               }
             ]
           },

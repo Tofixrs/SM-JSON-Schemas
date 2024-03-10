@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/vec3.json",
+  "$id": "./vec3.json",
   "title": "Vec3",
   "description": "",
   "additionalProperties": false,

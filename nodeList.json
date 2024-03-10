@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/nodeList.json",
+  "$id": "./nodeList.json",
   "title": "nodeList",
   "description": "",
   "type": "object",
@@ -16,8 +16,12 @@
             "items": { "type": "string" },
             "description": "The first tag is considered the primary tag and should be unique"
           },
-          "color": { "type": "array", "items": { "type": "number" } },
-          "billboardColor": { "type": "array", "items": { "type": "number" } },
+          "color": { "type": "array", "items": {
+            "$ref": "./hexColor.json"
+          } },
+          "billboardColor": { "type": "array", "items": {
+            "$ref": "./hexColor.json"
+          } },
           "params": {
             "type": "array",
             "items": {
