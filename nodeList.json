@@ -16,12 +16,8 @@
             "items": { "type": "string" },
             "description": "The first tag is considered the primary tag and should be unique"
           },
-          "color": { "type": "array", "items": {
-            "$ref": "./hexColor.json"
-          } },
-          "billboardColor": { "type": "array", "items": {
-            "$ref": "./hexColor.json"
-          } },
+          "color": { "type": "array", "items": { "type": "number"  }},
+          "billboardColor": { "type": "array", "items": { "type": "number"  }}
           "params": {
             "type": "array",
             "items": {
