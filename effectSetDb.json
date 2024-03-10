@@ -1,6 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "./effectSetDb.json",
+  "$schema": "https://json-schema.org/draft-07/schema",
   "title": "effectSetDb",
   "description": "",
   "type": "object",
@@ -12,7 +12,7 @@
       "items": {
         "type": "object",
         "properties": {
-          "path": { "type": "string" },
+          "path": { "$ref": "./smPath.json" },
           "showInEditor": { "type": "boolean" }
         }
       }

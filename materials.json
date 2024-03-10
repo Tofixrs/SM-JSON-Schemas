@@ -1,6 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "./materials.json",
+  "$schema": "https://json-schema.org/draft-07/schema",
   "title": "Materials",
   "description": "",
   "enum": [
@@ -15,11 +15,10 @@
     "Foilage",
     "Fruit",
     "Glass",
-    "Grass",
     "Gravel",
     "Mechanical",
     "Metal",
-    "Potatio",
+    "Potato",
     "Sand",
     "SledgeHammer",
     "Tape",

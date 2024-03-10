@@ -1,20 +1,17 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "./decalSet.json",
+  "$schema": "https://json-schema.org/draft-07/schema",
   "title": "decalSet",
   "description": "",
   "type": "object",
   "properties": {
-    "difSheet": { "type": "string" },
-    "norSheet": { "type": "string" },
-    "agsSheet": { "type": "string" },
+    "difSheet": { "$ref": "./smPath.json" },
+    "norSheet": { "$ref": "./smPath.json" },
+    "agsSheet": { "$ref": "./smPath.json" },
     "decalSet": {
       "patternProperties": {
         "^.*$": {
-          "uuid": {
-            "type": "string",
-            "format": "uuid"
-          },
+          "uuid": { "$ref": "./uuid.json" },
           "region": { "type": "array", "items": { "type": "integer" } },
           "material": {
             "enum": [

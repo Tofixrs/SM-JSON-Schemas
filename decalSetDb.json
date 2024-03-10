@@ -1,6 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "./decalSetDb.json",
+  "$schema": "https://json-schema.org/draft-07/schema",
   "title": "decalSetDb",
   "description": "",
   "type": "object",
@@ -12,7 +12,7 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "set": { "type": "string" },
+          "set": { "$ref": "./smPath.json" },
           "category": { "type": "string" }
         },
         "required": ["name"]

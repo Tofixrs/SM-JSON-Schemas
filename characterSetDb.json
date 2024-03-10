@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/0.6.6-backport/characterSetDb.json",
+  "$id": "./characterSetDb.json",
   "title": "CharacterSets",
   "description": "",
   "type": "object",
@@ -9,9 +9,7 @@
     "characterSetList": {
       "description": "",
       "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "items": { "$ref": "./smPath.json" }
     }
   },
   "required": ["characterSetList"]

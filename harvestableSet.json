@@ -1,6 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "./harvestableSet.json",
+  "$schema": "https://json-schema.org/draft-07/schema",
   "title": "harvestableSet",
   "description": "",
   "type": "object",
@@ -11,10 +11,7 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "uuid": {
-            "type": "string",
-            "format": "uuid"
-          },
+          "uuid": { "$ref": "./uuid.json" },
           "name": { "type": "string" },
           "showInEditor": { "type": "boolean" },
           "removable": { "type": "boolean" },
@@ -25,20 +22,16 @@
             "description": "Only used for https://scrapmechanicdocs.com/docs/Game-Script-Environment/Static-Functions/sm.ai/#getclosesttree"
           },
           "slope": { "enum": ["rotate"] },
-          "col": { "type": "string" },
-          "col_box": {
-            "$ref": "./vec3.json"
-          },
+          "col": { "$ref": "./smPath.json" },
+          "col_box": { "$ref": "./vec3.json" },
           "size": { "type": "integer" },
           "color": {
             "oneOf": [
               {
                 "type": "array",
-                "items": {
-                  "$ref": "./hexColor.json"
-                }
+                "items": { "$ref": "./hexColor.json" }
               },
-              { "type": "string", "pattern": "^(?:[0-9a-fA-F]{2}){3,4}$" }
+              { "$ref": "./hexColor.json" }
             ]
           },
           "physics": {
@@ -46,20 +39,16 @@
             "additionalProperties": false,
             "properties": {
               "mass": { "type": "integer" },
-              "material": {
-                "$ref": "./materials.json"
-              }
+              "material": { "$ref": "./materials.json" }
             }
           },
           "mass": { "type": "integer" },
-          "material": {
-            "$ref": "./materials.json"
-          },
+          "material": { "$ref": "./materials.json" },
           "script": {
             "type": "object",
             "properties": {
               "file": {
-                "type": "string",
+                "$ref": "./smPath.json",
                 "description": "Path to the script"
               },
               "class": {
@@ -74,12 +63,7 @@
             "required": ["class", "file"]
           },
           "renderable": {
-            "oneOf": [
-              { "type": "string" },
-              {
-                "$ref": "./rend.json"
-              }
-            ]
+            "oneOf": [{ "$ref": "./smPath.json" }, { "$ref": "./rend.json" }]
           },
           "collides": {
             "character": { "type": "boolean" },

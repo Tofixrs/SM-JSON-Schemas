@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/0.6.6-backport/characterSet.json",
+  "$id": "./characterSet.json",
   "title": "characterSet",
   "description": "",
   "type": "object",
@@ -27,7 +27,7 @@
       "type": "object",
       "properties": {
         "scriptPath": {
-          "type": "string",
+          "$ref": "./smPath.json",
           "description": "Path to the script"
         },
         "scriptClass": {
@@ -52,20 +52,14 @@
           "uuid": { "$ref": "./uuid.json" },
           "renderables": {
             "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "items": { "$ref": "./smPath.json" }
           },
-          "ragdoll": {
-            "type": "string"
-          },
+          "ragdoll": { "$ref": "./smPath.json" },
           "tumble": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "col": {
-                "type": "string"
-              },
+              "col": { "$ref": "./smPath.json" },
               "offset": {
                 "type": "array",
                 "items": {
@@ -79,20 +73,12 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "crouch": {
-                "$ref": "#/definitions/hit"
-              },
-              "stand": {
-                "$ref": "#/definitions/hit"
-              }
+              "crouch": { "$ref": "#/definitions/hit" },
+              "stand": { "$ref": "#/definitions/hit" }
             }
           },
-          "unit": {
-            "$ref": "#/definitions/script"
-          },
-          "character": {
-            "$ref": "#/definitions/script"
-          },
+          "unit": { "$ref": "#/definitions/script" },
+          "character": { "$ref": "#/definitions/script" },
           "movement": {
             "type": "object",
             "properties": {
@@ -115,8 +101,7 @@
           },
           "mass": { "type": "number" },
           "characterShapeUuid": {
-            "type": "string",
-            "format": "uuid"
+            "$ref": "./uuid.json"
           },
           "paint": {
             "enable": { "type": "boolean" },

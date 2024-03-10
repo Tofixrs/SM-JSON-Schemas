@@ -1,6 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "./shapeSetDb.json",
+  "$schema": "https://json-schema.org/draft-07/schema",
   "title": "shapeSetDb",
   "description": "",
   "type": "object",
@@ -8,7 +8,7 @@
     "shapeSetList": {
       "description": "",
       "type": "array",
-      "items": { "type": "string" }
+      "items": { "$ref": "./smPath.json" }
     }
   },
   "required": ["shapeSetList"]
