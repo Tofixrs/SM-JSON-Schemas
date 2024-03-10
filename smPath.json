@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "./smPath.json",
+    "title": "SM Path",
+    "description": "A Path In Scrap Mechanic\nGAME points to SM/Data\nSURVIVAL points to SM/Survival\nCHALLENGE points to SM/ChallengeData\nCONTENT is for mods",
+    "type": "string",
+    "pattern": "\\$((?:GAME_DATA|CONTENT_DATA|SURVIVAL_DATA|CHALLENGE_DATA|CONTENT_([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})))[\\\\\\/](?:[a-zA-Z0-9_]+[\\\\\\/])*([a-zA-Z0-9_.]+)"
+}

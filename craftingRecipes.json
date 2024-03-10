@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/craftingRecipes.json",
+  "$id": "./craftingRecipes.json",
   "title": "CraftingRecipes",
   "description": "",
   "type": "array",
@@ -53,8 +53,8 @@
             },
             "itemId": {
               "type": "string",
-              "description": "The item uuid",
-              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+              "format": "uuid",
+              "description": "The item uuid"
             }
           }
         }

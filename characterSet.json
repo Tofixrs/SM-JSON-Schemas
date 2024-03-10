@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/characterSet.json",
+  "$id": "./characterSet.json",
   "title": "characterSet",
   "description": "",
   "type": "object",
@@ -13,7 +13,7 @@
         "properties": {
           "uuid": {
             "type": "string",
-            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            "format": "uuid"
           },
           "renderables": {
             "type": "array",
@@ -45,18 +45,18 @@
             "additionalProperties": false,
             "properties": {
               "crouch": {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/hit.json"
+                "$ref": "./hit.json"
               },
               "stand": {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/hit.json"
+                "$ref": "./hit.json"
               }
             }
           },
           "unit": {
-            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/charSetScriptFormat.json"
+            "$ref": "./charSetScriptFormat.json"
           },
           "character": {
-            "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/charSetScriptFormat.json"
+            "$ref": "./charSetScriptFormat.json"
           },
           "movement": {
             "type": "object",
@@ -81,13 +81,12 @@
           "mass": { "type": "number" },
           "characterShapeUuid": {
             "type": "string",
-            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            "format": "uuid"
           },
           "paint": {
             "enable": { "type": "boolean" },
             "defaultColor": {
-              "type": "string",
-              "pattern": "^(?:[0-9a-fA-F]{2}){3}$"
+              "$ref": "./hexColor.json"
             },
             "effect": {
               "$ref": "https://raw.githubusercontent/com/Tofixrs/SM-JSON-Schemas/master/effect.json"

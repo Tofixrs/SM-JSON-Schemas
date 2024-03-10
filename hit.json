@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/hit.json",
+  "$id": "./hit.json",
   "title": "Hit",
   "description": "",
   "additionalProperties": false,

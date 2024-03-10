@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/rend.json",
+  "$id": "./rend.json",
   "title": "Vec3",
   "description": "",
   "type": "object",
@@ -32,14 +32,14 @@
           "subMeshList": {
             "type": "array",
             "items": {
-              "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/subMesh.json"
+              "$ref": "./subMesh.json"
             }
           },
           "subMeshMap": {
             "type": "object",
             "patternProperties": {
               "^.*$": {
-                "$ref": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/master/subMesh.json"
+                "$ref": "./subMesh.json"
               }
             }
           },
