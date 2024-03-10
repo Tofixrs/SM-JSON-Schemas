@@ -18,18 +18,18 @@
           "renderables": {
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "./smPath.json"
             }
           },
           "ragdoll": {
-            "type": "string"
+            "$ref": "./smPath.json"
           },
           "tumble": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
               "col": {
-                "type": "string"
+                "$ref": "./smPath.json"
               },
               "offset": {
                 "type": "array",

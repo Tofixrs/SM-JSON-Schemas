@@ -6,7 +6,9 @@
   "additionalProperties": false,
   "type": "object",
   "properties": {
-    "textureList": { "type": "array", "items": "strings" },
+    "textureList": { "type": "array", "items": {
+      "$ref": "./smPath.json"
+    } },
     "material": { "type": "string" },
     "custom": { "type": "object" },
     "idx": { "type": "integer" }

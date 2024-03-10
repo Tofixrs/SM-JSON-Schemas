@@ -7,7 +7,7 @@
   "type": "object",
   "properties": {
     "col": {
-      "type": "string"
+      "$ref": "./smPath.json"
     },
     "offset": {
       "type": "array",

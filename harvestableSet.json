@@ -25,10 +25,8 @@
             "description": "Only used for https://scrapmechanicdocs.com/docs/Game-Script-Environment/Static-Functions/sm.ai/#getclosesttree"
           },
           "slope": { "enum": ["rotate"] },
-          "col": { "type": "string" },
-          "col_box": {
-            "$ref": "./vec3.json"
-          },
+          "col": { "$ref": "./smPath.json" },
+          "col_box": { "$ref": "./vec3.json" },
           "size": { "type": "integer" },
           "color": {
             "oneOf": [
@@ -59,7 +57,7 @@
             "type": "object",
             "properties": {
               "file": {
-                "type": "string",
+                "$ref": "./smPath.json",
                 "description": "Path to the script"
               },
               "class": {
@@ -75,10 +73,8 @@
           },
           "renderable": {
             "oneOf": [
-              { "type": "string" },
-              {
-                "$ref": "./rend.json"
-              }
+              { "$ref": "./smPath.json" },
+              { "$ref": "./rend.json" }
             ]
           },
           "collides": {

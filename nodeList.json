@@ -39,7 +39,7 @@
               }
             }
           },
-          "renderable": { "type": "string" },
+          "renderable": { "$ref": "./smPath.json" },
           "optionalParams": {
             "type": "array",
             "items": {

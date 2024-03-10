@@ -7,7 +7,7 @@
   "type": "object",
   "properties": {
     "scriptPath": {
-      "type": "string",
+      "$ref": "./smPath.json",
       "description": "Path to the script"
     },
     "scriptClass": {

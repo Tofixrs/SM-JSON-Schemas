@@ -5,10 +5,10 @@
   "description": "",
   "type": "object",
   "properties": {
-    "shapeSetList": {
-      "description": "",
-      "type": "array",
-      "items": { "type": "string" }
+  "shapeSetList": {
+    "description": "",
+    "type": "array",
+    "items": { "$ref": "./smPath.json" }
     }
   },
   "required": ["shapeSetList"]

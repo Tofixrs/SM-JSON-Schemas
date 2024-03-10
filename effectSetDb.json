@@ -12,7 +12,7 @@
       "items": {
         "type": "object",
         "properties": {
-          "path": { "type": "string" },
+          "path": { "$ref": "./smPath.json" },
           "showInEditor": { "type": "boolean" }
         }
       }

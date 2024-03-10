@@ -10,7 +10,7 @@
     "properties": {
       "itemId": {
         "type": "string",
-        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "format": "uuid",
         "description": "item to craft"
       },
       "quantity": {
@@ -35,7 +35,7 @@
             },
             "itemId": {
               "type": "string",
-              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+              "format": "uuid"
             }
           }
         }

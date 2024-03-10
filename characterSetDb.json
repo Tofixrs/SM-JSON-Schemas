@@ -10,7 +10,7 @@
       "description": "",
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "./smPath.json"
       }
     }
   },

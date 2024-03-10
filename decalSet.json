@@ -5,9 +5,9 @@
   "description": "",
   "type": "object",
   "properties": {
-    "difSheet": { "type": "string" },
-    "norSheet": { "type": "string" },
-    "agsSheet": { "type": "string" },
+    "difSheet": { "$ref": "./smPath.json" },
+    "norSheet": { "$ref": "./smPath.json" },
+    "agsSheet": { "$ref": "./smPath.json" },
     "decalSet": {
       "patternProperties": {
         "^.*$": {

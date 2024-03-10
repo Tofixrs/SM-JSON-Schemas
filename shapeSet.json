@@ -200,7 +200,7 @@
           "flammable": { "type": "boolean" },
           "autoTool": {
             "type": "string",
-            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+            "format": "uuid"
           },
           "stackSize": { "type": "integer" },
           "restrictions": { "$ref": "objRestrictions" },
@@ -312,7 +312,7 @@
             "properties": {
               "harvestable": {
                 "type": "string",
-                "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+                "format": "uuid"
               }
             }
           },
