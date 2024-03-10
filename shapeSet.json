@@ -1,9 +1,35 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "./shapeSet.json",
   "title": "shapeSet",
   "description": "",
   "type": "object",
+  "definitions": {
+    "objRatings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "density": { "type": "integer" },
+        "durability": { "type": "integer" },
+        "friction": { "type": "integer" },
+        "buoyancy": { "type": "integer" }
+      }
+    },
+    "objRestrictions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "destructable": { "type": "boolean" },
+        "erasable": { "type": "boolean" },
+        "buildable": { "type": "boolean" },
+        "liftable": { "type": "boolean" },
+        "convertibleToDynamic": { "type": "boolean" },
+        "paintable": { "type": "boolean" },
+        "usable": { "type": "boolean" },
+        "connectable": { "type": "boolean" }
+      }
+    }
+  },
   "properties": {
     "partList": {
       "type": "array",
@@ -170,36 +196,14 @@
           "physicsMaterial": {
             "$ref": "./materials.json"
           },
-          "ratings": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "density": { "type": "integer" },
-              "durability": { "type": "integer" },
-              "friction": { "type": "integer" },
-              "buoyancy": { "type": "integer" }
-            }
-          },
+          "ratings": { "$ref": "objRatings" },
           "flammable": { "type": "boolean" },
           "autoTool": {
             "type": "string",
             "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
           },
           "stackSize": { "type": "integer" },
-          "restrictions": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "destructable": { "type": "boolean" },
-              "erasable": { "type": "boolean" },
-              "buildable": { "type": "boolean" },
-              "liftable": { "type": "boolean" },
-              "convertibleToDynamic": { "type": "boolean" },
-              "paintable": { "type": "boolean" },
-              "usable": { "type": "boolean" },
-              "connectable": { "type": "boolean" }
-            }
-          },
+          "restrictions": { "$ref": "objRestrictions" },
           "showInInventory": { "type": "boolean" },
           "renderable": {
             "oneOf": [
@@ -432,6 +436,42 @@
               "effect": { "type": "string" }
             }
           }
+        }
+      }
+    },
+    "blockList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": { "type": "string" },
+          "dif": { "$ref": "./smPath.json",
+            "title": "path to DIF texture"
+          },
+          "asg": { "$ref": "./smPath.json",
+            "title": "path to ASG texture"
+          },
+          "nor": { "$ref": "./smPath.json",
+            "title": "path to NOR texture"
+          },
+          "tiling": { "type": "integer",
+            "description": "Amount of blocks of Tiling the texture represents"
+          },
+          "color": { "$ref": "./hexColor.json" },
+          "physicsMaterial": { "$ref": "./materials.json" },
+          "ratings": { "$ref": "objRatings" },
+          "friction": { "type": "number" },
+          "flammable": { "type": "boolean" },
+          "density": { "type": "number" },
+          "qualityLevel": { "type": "number" },
+          "restrictions": { "$ref": "objRestrictions" },
+          "alpha": { "type": "boolean" },
+          "glass": { "type": "boolean" },
+          "max_stack_count": { "type": "integer" }
         }
       }
     }
