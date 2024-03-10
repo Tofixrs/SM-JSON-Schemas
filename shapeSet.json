@@ -449,16 +449,20 @@
             "format": "uuid"
           },
           "name": { "type": "string" },
-          "dif": { "$ref": "./smPath.json",
+          "dif": { 
+            "$ref": "./smPath.json",
             "title": "path to DIF texture"
           },
-          "asg": { "$ref": "./smPath.json",
+          "asg": { 
+            "$ref": "./smPath.json",
             "title": "path to ASG texture"
           },
-          "nor": { "$ref": "./smPath.json",
+          "nor": { 
+            "$ref": "./smPath.json",
             "title": "path to NOR texture"
           },
-          "tiling": { "type": "integer",
+          "tiling": {
+             "type": "integer",
             "description": "Amount of blocks of Tiling the texture represents"
           },
           "color": { "$ref": "./hexColor.json" },
