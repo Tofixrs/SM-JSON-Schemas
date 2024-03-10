@@ -4,7 +4,6 @@
   "title": "decalSetDb",
   "description": "",
   "type": "object",
-  "additionalProperties": false,
   "properties": {
     "decalSetList": {
       "type": "array",
