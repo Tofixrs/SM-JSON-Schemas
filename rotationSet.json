@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "./rotationSet.json",
+  "title": "RotationSet",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "rotationSet": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalItems": false,
+        "properties": {
+          "name": { "type": "string" },
+          "prop": { "type": "boolean" },
+          "rotation": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalItems": false,
+              "properties": {
+                "south": { "enum": ["-Y", "-X", "-Z", "Y", "X", "Z"] },
+                "east": { "enum": ["-Y", "-X", "-Z", "Y", "X", "Z"] }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
