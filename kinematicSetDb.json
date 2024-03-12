@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "./kinematicSetDb.json",
+  "title": "Kinematic Sets",
+  "description": "",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "kinematicSetList": {
+      "type": "array",
+      "items": {
+        "$ref": "./smPath.json"
+      }
+    }
+  },
+  "required": ["col", "offset"]
+}

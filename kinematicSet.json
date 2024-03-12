@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./kinematicSet.json",
+  "title": "kinematic Set",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "kinematicList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "col": { "$ref": "./smPath.json" },
+          "color": { "$ref": "./hexColor.json" },
+          "mass": { "type": "number" },
+          "material": { "$ref": "./materials.json" },
+          "name": { "type": "string" },
+          "params": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "type": { "type": "string" }
+              }
+            }
+          },
+          "renderable": { "$ref": "./smPath.json" },
+          "script": {
+            "type": "object",
+            "properties": {
+              "file": { "$ref": "./smPath.json" },
+              "class": { "type": "string" },
+              "data": { "type": "object" }
+            }
+          },
+          "uuid": { "$ref": "./uuid.json" }
+        }
+      }
+    }
+  }
+}
