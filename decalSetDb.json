@@ -2,7 +2,7 @@
   "$id": "./decalSetDb.json",
   "$schema": "https://json-schema.org/draft-07/schema",
   "title": "decalSetDb",
-  "description": "",
+  "description": "List of Decal Sets",
   "type": "object",
   "properties": {
     "decalSetList": {

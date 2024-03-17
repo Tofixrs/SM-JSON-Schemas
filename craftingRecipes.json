@@ -26,6 +26,7 @@
         "type": "array",
         "items": {
           "type": "object",
+          "required": ["quantity", "itemId"],
           "properties": {
             "quantity": {
               "type": "integer",
@@ -44,6 +45,7 @@
         "description": "Extra item that you will get when crafting used for things such as getting water from bucket",
         "items": {
           "type": "object",
+          "required": ["quantity", "itemId"],
           "properties": {
             "quantity": {
               "type": "integer",
@@ -59,6 +61,7 @@
       },
       "reward": {
         "type": "object",
+        "description": "Used for Dressbot",
         "properties": {
           "tier": {
             "enum": ["Common", "Rare", "Epic", ""]
