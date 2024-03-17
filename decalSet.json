@@ -2,7 +2,7 @@
   "$id": "./decalSet.json",
   "$schema": "https://json-schema.org/draft-07/schema",
   "title": "decalSet",
-  "description": "",
+  "description": "A List of decals to be placed in the tile editor.\nthey overlay a texture onto whatever their placed.",
   "type": "object",
   "properties": {
     "difSheet": { "$ref": "./smPath.json" },
@@ -13,17 +13,7 @@
         "^.*$": {
           "uuid": { "$ref": "./uuid.json" },
           "region": { "type": "array", "items": { "type": "integer" } },
-          "material": {
-            "enum": [
-              "Dif",
-              "DifNor",
-              "DifAgs",
-              "DifNorAgs",
-              "DifAgsNor",
-              "NorAgs",
-              "Ags"
-            ]
-          }
+          "material": { "$ref": "./textureMaterial.json" }
         }
       }
     }

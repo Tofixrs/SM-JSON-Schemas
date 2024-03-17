@@ -1,8 +1,8 @@
 {
   "$id": "./rend.json",
   "$schema": "https://json-schema.org/draft-07/schema",
-  "title": "Vec3",
-  "description": "",
+  "title": "Renderable",
+  "description": "Specifies how something is rendered, like textures and meshes.",
   "type": "object",
   "properties": {
     "lodList": {

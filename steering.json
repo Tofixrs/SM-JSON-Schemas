@@ -2,7 +2,7 @@
   "$id": "./steering.json",
   "$schema": "https://json-schema.org/draft-07/schema",
   "title": "steering",
-  "description": "",
+  "description": "specifications for seat steering",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -13,15 +13,7 @@
         "additionalProperties": false,
         "properties": {
           "name": { "type": "string" },
-          "offset": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "x": { "type": "number" },
-              "y": { "type": "number" },
-              "z": { "type": "number" }
-            }
-          },
+          "offset": { "$ref": "./vec3.json" },
           "freeRotation": { "type": "boolean" },
           "steers": { "type": "boolean" }
         }

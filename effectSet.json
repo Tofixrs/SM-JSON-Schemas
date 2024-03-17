@@ -2,7 +2,7 @@
   "$id": "./effectSet.json",
   "$schema": "https://json-schema.org/draft-07/schema",
   "title": "effectSet",
-  "description": "",
+  "description": "A list of effects that can play audio,particles,etc.",
   "type": "object",
   "patternProperties": {
     "^(?!\\$schema$).*": {

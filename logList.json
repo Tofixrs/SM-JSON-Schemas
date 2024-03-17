@@ -2,7 +2,7 @@
   "$id": "./logList.json",
   "$schema": "https://json-schema.org/draft-07/schema",
   "title": "logList",
-  "description": "",
+  "description": "List of Logs to be use in Log Book.",
   "type": "object",
   "properties": {
     "logList": {

@@ -2,7 +2,7 @@
   "$id": "./harvestableSetList.json",
   "$schema": "https://json-schema.org/draft-07/schema",
   "title": "harvestableSetList",
-  "description": "",
+  "description": "List of Harvestable Sets",
   "type": "object",
   "properties": {
     "harvestableSetList": {

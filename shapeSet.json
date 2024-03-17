@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "./shapeSet.json",
   "title": "shapeSet",
-  "description": "",
+  "description": "A list of parts/interactibles and blocks that can be used in the game",
   "type": "object",
   "definitions": {
     "objRatings": {

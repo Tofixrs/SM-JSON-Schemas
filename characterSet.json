@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft-07/schema",
   "$id": "./characterSet.json",
   "title": "characterSet",
-  "description": "",
+  "description": "A List of characters that can be spawned in with code.\nthey can also have custom scripts.",
   "type": "object",
   "definitions": {
     "hit": {

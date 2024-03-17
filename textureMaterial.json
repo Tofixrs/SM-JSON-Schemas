@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "./textureMaterial.json",
+    "title": "Texture Material",
+    "description": "A specification for what order of textures your using",
+    "type": "string",
+    "enum": [
+        "Dif",
+        "DifNor",
+        "DifAgs",
+        "DifNorAgs",
+        "DifAgsNor",
+        "NorAgs",
+        "Ags"
+    ]
+}

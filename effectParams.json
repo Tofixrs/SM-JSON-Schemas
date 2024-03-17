@@ -2,7 +2,7 @@
   "$id": "./effectParams.json",
   "$schema": "https://json-schema.org/draft-07/schema",
   "title": "effectParams",
-  "description": "",
+  "description": "Paramaters for an Effect",
   "oneOf": [
     { "type": "array", "items": { "type": "string" } },
     {

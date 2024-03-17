@@ -1,8 +1,8 @@
 {
   "$id": "./materials.json",
   "$schema": "https://json-schema.org/draft-07/schema",
-  "title": "Materials",
-  "description": "",
+  "title": "Physics Materials",
+  "description": "Type of material an object represents (used for sounds and particles)",
   "enum": [
     "Wood",
     "Plastic",
