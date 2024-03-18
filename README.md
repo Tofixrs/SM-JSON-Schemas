@@ -14,3 +14,7 @@ For those who dont know json schemas are just documentation for jsons wich have 
   "$schema": "https://raw.githubusercontent.com/Tofixrs/SM-JSON-Schemas/0.6.6/shapeSet.json"
 }
 ```
+
+TODO-Descriptions:
+Characters:
+  ragdoll config

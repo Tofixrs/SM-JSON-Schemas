@@ -8,6 +8,7 @@
     "hit": {
       "additionalProperties": false,
       "type": "object",
+      "description": "Hit Collider",
       "properties": {
         "col": {
           "type": "string"
@@ -25,6 +26,7 @@
     "script": {
       "additionalProperties": false,
       "type": "object",
+      "description": "Script to be placed on the character.",
       "properties": {
         "scriptPath": {
           "$ref": "./smPath.json",
@@ -52,11 +54,15 @@
           "uuid": { "$ref": "./uuid.json" },
           "renderables": {
             "type": "array",
+            "description": "all the character's renderables.",
             "items": { "$ref": "./smPath.json" }
           },
-          "ragdoll": { "$ref": "./smPath.json" },
+          "ragdoll": { "$ref": "./smPath.json",
+            "description": "The path to the ragdoll config for the character."
+          },
           "tumble": {
             "type": "object",
+            "description": "The tumble collider for the character.",
             "additionalProperties": false,
             "properties": {
               "col": { "$ref": "./smPath.json" },
@@ -71,6 +77,7 @@
           },
           "hit": {
             "type": "object",
+            "description": "The hit collider for the character.",
             "additionalProperties": false,
             "properties": {
               "crouch": { "$ref": "#/definitions/hit" },
@@ -81,35 +88,55 @@
           "character": { "$ref": "#/definitions/script" },
           "movement": {
             "type": "object",
+            "description": "How the character is allowed to move",
             "properties": {
-              "moveSpeed": { "type": "number" },
-              "slowDownSpeed": { "type": "number" },
-              "crouchSpeed": { "type": "number" },
-              "sprintSpeed": { "type": "number" },
+              "moveSpeed": { "type": "number",
+                "description": "The normal move speed."
+              },
+              "slowDownSpeed": { "type": "number",
+                "description": "how fast the character slows down (friction?)"
+              },
+              "crouchSpeed": { "type": "number",
+                "description": "The speed the character can move while crouched."
+              },
+              "sprintSpeed": { "type": "number",
+                "description": "The speed the character can sprint at."
+              },
               "headingRotationSpeed": { "type": "number" },
               "facingRotationSpeed": { "type": "number" },
-              "canSwim": { "type": "boolean" }
+              "canSwim": { "type": "boolean",
+                "description": "If the character can swim."
+              }
             }
           },
           "capsule": {
             "type": "object",
+            "description": "The capsule collider for the character.",
             "properties": {
               "radius": { "type": "number" },
               "height": { "type": "number" },
-              "crouchHeight": { "type": "number" }
+              "crouchHeight": { "type": "number",
+                "description": "The height of the capsule when crouched."
+              }
             }
           },
           "mass": { "type": "number" },
-          "characterShapeUuid": {
-            "$ref": "./uuid.json"
+          "characterShapeUuid": { "$ref": "./uuid.json",
+            "description": "A UUID of a shape that represents the character."
           },
           "paint": {
-            "enable": { "type": "boolean" },
-            "defaultColor": {
-              "$ref": "./hexColor.json"
-            },
-            "effect": {
-              "$ref": "./effect.json"
+            "type": "object",
+            "description": "how the character can be painted.",
+            "properties": {
+              "enable": { "type": "boolean",
+                "description": "If the player can paint this character."
+              },
+              "defaultColor": { "$ref": "./hexColor.json",
+                "description": "default color of the character."
+              },
+              "effect": { "$ref": "./effect.json",
+                "description": "the effect to play when the character is painted."
+              }
             }
           },
           "sound": {
