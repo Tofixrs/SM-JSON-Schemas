@@ -24,6 +24,7 @@
       },
       "ingredientList": {
         "type": "array",
+        "description": "List of items needed to craft the item",
         "items": {
           "type": "object",
           "required": ["quantity", "itemId"],

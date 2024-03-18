@@ -15,6 +15,6 @@ For those who dont know json schemas are just documentation for jsons wich have 
 }
 ```
 
-TODO-Descriptions:
+## TODO Descriptions:
 Characters:
-  ragdoll config
+- ragdoll config
