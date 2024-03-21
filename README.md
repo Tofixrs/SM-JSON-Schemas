@@ -24,3 +24,6 @@ RotationSet:
 - 'prop' description
 SubMesh:
 - 'custom' & 'idx' description
+ShapeSet:
+- blockList: 'friction' & 'quality level' description
+- 

@@ -433,10 +433,11 @@
       "items": {
         "type": "object",
         "properties": {
-          "uuid": {
-            "$ref": "./uuid.json"
+          "uuid": { "$ref": "./uuid.json",
+            "title": "the unique identifier of the block"
           },
-          "name": { "type": "string" },
+          "name": { "type": "string",
+            "title": "a unique name for the block."},
           "dif": {
             "$ref": "./smPath.json",
             "title": "path to DIF texture"
@@ -457,13 +458,23 @@
           "physicsMaterial": { "$ref": "./materials.json" },
           "ratings": { "$ref": "#/definitions/objRatings" },
           "friction": { "type": "number" },
-          "flammable": { "type": "boolean" },
-          "density": { "type": "number" },
+          "flammable": { "type": "boolean",
+            "description": "if the block is flammable"
+          },
+          "density": { "type": "number",
+            "description": "the density of the block"
+          },
           "qualityLevel": { "type": "number" },
           "restrictions": { "$ref": "#/definitions/objRestrictions" },
-          "alpha": { "type": "boolean" },
-          "glass": { "type": "boolean" },
-          "max_stack_count": { "type": "integer" }
+          "alpha": { "type": "boolean",
+            "description": "if the block has transparency"
+          },
+          "glass": { "type": "boolean",
+            "description": "if the block is considerd glass "
+          },
+          "max_stack_count": { "type": "integer",
+            "description": "the maximum amount of blocks that can be stacked in one inventory slot"
+          }
         }
       }
     }
