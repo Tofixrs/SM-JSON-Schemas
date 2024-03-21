@@ -20,3 +20,7 @@ Characters:
 - ragdoll config
 Harverstable:
 - size description
+RotationSet:
+- 'prop' description
+SubMesh:
+- 'custom' & 'idx' description

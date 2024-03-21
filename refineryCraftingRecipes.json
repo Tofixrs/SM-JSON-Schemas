@@ -10,8 +10,8 @@
       "additionalProperties": false,
       "properties": {
         "itemId": {
-          "$ref": "./smPath.json",
-          "description": "item to craft"
+          "$ref": "./uuid.json",
+          "title": "item to craft"
         },
         "quantity": {
           "type": "integer",
