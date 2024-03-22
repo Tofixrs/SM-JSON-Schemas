@@ -5,30 +5,40 @@
   "description": "A List of decals to be placed in the tile editor.\nthey overlay a texture onto whatever their placed.",
   "type": "object",
   "properties": {
-    "difSheet": { "$ref": "./smPath.json",
+    "difSheet": {
+      "$ref": "./smPath.json",
       "title": "Path to DIF texture sheet"
     },
-    "norSheet": { "$ref": "./smPath.json",
+    "norSheet": {
+      "$ref": "./smPath.json",
       "title": "Path to NOR texture sheet"
     },
-    "agsSheet": { "$ref": "./smPath.json",
+    "agsSheet": {
+      "$ref": "./smPath.json",
       "title": "Path to ASG texture sheet"
     },
     "decalSet": {
       "patternProperties": {
         "^.*$": {
-          "uuid": { "$ref": "./uuid.json",
+          "uuid": {
+            "$ref": "./uuid.json",
             "title": "The Decal's UUID"
           },
           "region": {
             "type": "array",
             "description": "coordinate of the texture to use for the decal",
-            "items": { "type": "integer" },
+            "items": {
+              "type": "integer"
+            },
             "minItems": 4,
             "maxItems": 4
           },
-          "material": { "$ref": "./textureMaterial.json" },
-          "glow": { "type": "number" }
+          "material": {
+            "$ref": "./textureMaterial.json"
+          },
+          "glow": {
+            "type": "number"
+          }
         }
       }
     }

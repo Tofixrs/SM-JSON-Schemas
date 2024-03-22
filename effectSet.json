@@ -9,8 +9,12 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "parameterList": { "type": "object" },
-        "maxInstances": { "type": "number" },
+        "parameterList": {
+          "type": "object"
+        },
+        "maxInstances": {
+          "type": "number"
+        },
         "parameterCurves": {
           "type": "object",
           "patternProperties": {
@@ -19,8 +23,12 @@
             }
           }
         },
-        "startDistance": { "type": "number" },
-        "stopDistance": { "type": "number" },
+        "startDistance": {
+          "type": "number"
+        },
+        "stopDistance": {
+          "type": "number"
+        },
         "effectList": {
           "type": "array",
           "items": {
@@ -43,7 +51,9 @@
                   "text"
                 ]
               },
-              "name": { "type": "string" },
+              "name": {
+                "type": "string"
+              },
               "offset": {
                 "oneOf": [
                   {
@@ -60,9 +70,15 @@
               "rotation": {
                 "$ref": "./vec3.json"
               },
-              "attached": { "type": "boolean" },
-              "delay": { "type": "number" },
-              "duration": { "type": "number" },
+              "attached": {
+                "type": "boolean"
+              },
+              "delay": {
+                "type": "number"
+              },
+              "duration": {
+                "type": "number"
+              },
               "parameters": {
                 "$ref": "./effectParams.json"
               },
@@ -72,8 +88,12 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "FOV": { "type": "number" },
-                    "duration": { "type": "number" },
+                    "FOV": {
+                      "type": "number"
+                    },
+                    "duration": {
+                      "type": "number"
+                    },
                     "easing": {
                       "enum": [
                         "linear",
@@ -83,9 +103,15 @@
                         "easeOutQuad"
                       ]
                     },
-                    "jumpCut": { "type": "boolean" },
-                    "label": { "type": "string" },
-                    "overrideFOV": { "type": "boolean" },
+                    "jumpCut": {
+                      "type": "boolean"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "overrideFOV": {
+                      "type": "boolean"
+                    },
                     "position": {
                       "$ref": "./vec3Array.json"
                     },
@@ -110,8 +136,15 @@
                   }
                 }
               },
-              "event": { "type": "string" },
-              "audio": { "type": "array", "items": { "type": "string" } }
+              "event": {
+                "type": "string"
+              },
+              "audio": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
             }
           }
         }

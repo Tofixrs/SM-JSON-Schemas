@@ -4,7 +4,9 @@
   "title": "Effects",
   "description": "All the effects in the game",
   "anyOf": [
-    { "type": "string" },
+    {
+      "type": "string"
+    },
     {
       "enum": [
         "Builderguide - Active",

@@ -5,7 +5,9 @@
   "description": "An array of 3 numbers representing a 3D vector [X,Y,Z]",
   "additionalProperties": false,
   "type": "array",
-  "items": { "type": "number" },
+  "items": {
+    "type": "number"
+  },
   "maxItems": 3,
   "minItems": 3
 }

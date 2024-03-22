@@ -11,12 +11,20 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "set": { "$ref": "./smPath.json" },
-          "category": { "type": "string" }
+          "set": {
+            "$ref": "./smPath.json"
+          },
+          "category": {
+            "type": "string"
+          }
         },
-        "required": ["set"]
+        "required": [
+          "set"
+        ]
       }
     }
   },
-  "required": ["decalSetList"]
+  "required": [
+    "decalSetList"
+  ]
 }

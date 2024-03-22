@@ -9,24 +9,48 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "density": { "type": "integer" },
-        "durability": { "type": "integer" },
-        "friction": { "type": "integer" },
-        "buoyancy": { "type": "integer" }
+        "density": {
+          "type": "integer"
+        },
+        "durability": {
+          "type": "integer"
+        },
+        "friction": {
+          "type": "integer"
+        },
+        "buoyancy": {
+          "type": "integer"
+        }
       }
     },
     "objRestrictions": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "destructable": { "type": "boolean" },
-        "erasable": { "type": "boolean" },
-        "buildable": { "type": "boolean" },
-        "liftable": { "type": "boolean" },
-        "convertibleToDynamic": { "type": "boolean" },
-        "paintable": { "type": "boolean" },
-        "usable": { "type": "boolean" },
-        "connectable": { "type": "boolean" }
+        "destructable": {
+          "type": "boolean"
+        },
+        "erasable": {
+          "type": "boolean"
+        },
+        "buildable": {
+          "type": "boolean"
+        },
+        "liftable": {
+          "type": "boolean"
+        },
+        "convertibleToDynamic": {
+          "type": "boolean"
+        },
+        "paintable": {
+          "type": "boolean"
+        },
+        "usable": {
+          "type": "boolean"
+        },
+        "connectable": {
+          "type": "boolean"
+        }
       }
     },
     "engine": {
@@ -39,12 +63,18 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "velocity": { "type": "number" },
-              "power": { "type": "number" }
+              "velocity": {
+                "type": "number"
+              },
+              "power": {
+                "type": "number"
+              }
             }
           }
         },
-        "effect": { "type": "string" }
+        "effect": {
+          "type": "string"
+        }
       }
     }
   },
@@ -55,28 +85,47 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "uuid": { "$ref": "./uuid.json",
+          "uuid": {
+            "$ref": "./uuid.json",
             "title": "A unique identifier for the part"
           },
-          "destroyTime": { "type": "number",
+          "destroyTime": {
+            "type": "number",
             "description": "The time it takes to destroy the part"
           },
-          "density": { "type": "number"},
-          "name": { "type": "string",
+          "density": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string",
             "description": "A unique name for the part"
           },
-          "color": { "$ref": "./hexColor.json" },
-          "box": { "$ref": "./vec3.json",
+          "color": {
+            "$ref": "./hexColor.json"
+          },
+          "box": {
+            "$ref": "./vec3.json",
             "title": "A rectangular box collider"
           },
           "cylinder": {
             "type": "object",
             "description": "A cylindrical collider",
             "properties": {
-              "diameter": { "type": "number" },
-              "depth": { "type": "number" },
-              "margin": { "type": "number" },
-              "axis": { "enum": ["Y", "X", "Z"],
+              "diameter": {
+                "type": "number"
+              },
+              "depth": {
+                "type": "number"
+              },
+              "margin": {
+                "type": "number"
+              },
+              "axis": {
+                "enum": [
+                  "Y",
+                  "X",
+                  "Z"
+                ],
                 "description": "which axis the depth is on"
               }
             }
@@ -86,29 +135,47 @@
             "description": "A convex hull collider\n[x,y,z] are a rectangular box that contains the hull",
             "additionalProperties": false,
             "properties": {
-              "x": { "type": "number" },
-              "y": { "type": "number" },
-              "z": { "type": "number" },
-              "col": { "$ref": "./smPath.json",
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "z": {
+                "type": "number"
+              },
+              "col": {
+                "$ref": "./smPath.json",
                 "title": "Path to collider"
               },
-              "margin": { "type": "number" }
+              "margin": {
+                "type": "number"
+              }
             },
-            "required": ["x","y","z", "col"]
+            "required": [
+              "x",
+              "y",
+              "z",
+              "col"
+            ]
           },
           "sphere": {
             "type": "object",
             "description": "A spherical collider",
             "additionalProperties": false,
             "properties": {
-              "diameter": { "type": "number" }
+              "diameter": {
+                "type": "number"
+              }
             }
           },
           "scripted": {
             "additionalProperties": false,
             "type": "object",
             "properties": {
-              "filename": { "$ref": "./smPath.json" },
+              "filename": {
+                "$ref": "./smPath.json"
+              },
               "classname": {
                 "type": "string",
                 "description": "The class that the game will inject all the callbacks and properties into"
@@ -121,16 +188,23 @@
                 "type": "string",
                 "description": "Used for https://scrapmechanicdocs.com/docs/Game-Script-Environment/Static-Functions/sm.cell#getinteractablesbytag"
               },
-              "seat": { "$ref": "./steering.json" },
+              "seat": {
+                "$ref": "./steering.json"
+              },
               "steering": {
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                  "steerAngle": { "type": "number" }
+                  "steerAngle": {
+                    "type": "number"
+                  }
                 }
               }
             },
-            "required": ["filename", "classname"]
+            "required": [
+              "filename",
+              "classname"
+            ]
           },
           "rotationSet": {
             "description": "How the part can be rotated when placed",
@@ -215,65 +289,97 @@
                   "StaticYmmZmmXmm"
                 ]
               },
-              { "type": "string" }
+              {
+                "type": "string"
+              }
             ]
           },
           "seat": {
             "$ref": "./steering.json"
           },
-          "sticky": { "type": "string",
+          "sticky": {
+            "type": "string",
             "description": "which axis can other block/parts be placed on",
             "pattern": "([-+][XYZ])+"
           },
-          "physicsMaterial": { "$ref": "./materials.json" },
-          "ratings": { "$ref": "#/definitions/objRatings" },
-          "flammable": { "type": "boolean",
+          "physicsMaterial": {
+            "$ref": "./materials.json"
+          },
+          "ratings": {
+            "$ref": "#/definitions/objRatings"
+          },
+          "flammable": {
+            "type": "boolean",
             "description": "if the part is flammable"
           },
-          "autoTool": { "$ref": "./uuid.json",
+          "autoTool": {
+            "$ref": "./uuid.json",
             "description": "the uuid of a tool, used when the part is placed"
           },
-          "stackSize": { "type": "integer",
+          "stackSize": {
+            "type": "integer",
             "description": "number of parts that can be in one inventory slot"
           },
-          "restrictions": { "$ref": "#/definitions/objRestrictions" },
-          "showInInventory": { "type": "boolean",
+          "restrictions": {
+            "$ref": "#/definitions/objRestrictions"
+          },
+          "showInInventory": {
+            "type": "boolean",
             "description": "if the part is visible in the \"creative\" inventory"
           },
           "renderable": {
-            "oneOf": [{
+            "oneOf": [
+              {
                 "$ref": "./smPath.json",
                 "title": "path to renderable"
-              }, { "$ref": "./rend.json" }]
+              },
+              {
+                "$ref": "./rend.json"
+              }
+            ]
           },
           "characterShape": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "characterUuid": { "$ref": "./uuid.json" },
-              "placementSphereRadius": { "type": "number" }
+              "characterUuid": {
+                "$ref": "./uuid.json"
+              },
+              "placementSphereRadius": {
+                "type": "number"
+              }
             }
           },
           "spotlight": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "defaultLuminance": { "type": "number",
+              "defaultLuminance": {
+                "type": "number",
                 "description": "default brightness"
               },
-              "effect": { "$ref": "./effect.json" }
+              "effect": {
+                "$ref": "./effect.json"
+              }
             }
           },
           "spotLight": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "defaultLuminance": { "type": "number" },
-              "effect": { "$ref": "./effect.json" }
+              "defaultLuminance": {
+                "type": "number"
+              },
+              "effect": {
+                "$ref": "./effect.json"
+              }
             }
           },
-          "itemStack": { "type": "object" },
-          "consumable": { "type": "boolean",
+          "itemStack": {
+            "type": "object"
+          },
+          "consumable": {
+            "type": "boolean",
             "description": "if the part is consumable\nused to put in the CONSUMABLE category of inventory"
           },
           "edible": {
@@ -281,24 +387,30 @@
             "description": "if it can be \"eaten\"",
             "additionalProperties": false,
             "properties": {
-              "hpGain": { "type": "number",
+              "hpGain": {
+                "type": "number",
                 "description": "the amount of health gained when eaten"
               },
-              "foodGain": { "type": "number",
+              "foodGain": {
+                "type": "number",
                 "description": "the amount of food gained when eaten"
               },
-              "waterGain": { "type": "number",
+              "waterGain": {
+                "type": "number",
                 "description": "the amount of water gained when eaten"
               }
             }
           },
-          "carryItem": { "type": "boolean" },
+          "carryItem": {
+            "type": "boolean"
+          },
           "pipe": {
             "type": "object",
             "description": "config for pipes",
             "additionalProperties": false,
             "properties": {
-              "extendable": { "type": "boolean",
+              "extendable": {
+                "type": "boolean",
                 "description": "if this part can be expanded with (Q)"
               },
               "openings": {
@@ -310,11 +422,25 @@
                   "properties": {
                     "side": {
                       "description": "which side the opening is on on",
-                      "enum": ["+X", "-X", "+Y", "-Y", "+Z", "-Z", "Y"]
+                      "enum": [
+                        "+X",
+                        "-X",
+                        "+Y",
+                        "-Y",
+                        "+Z",
+                        "-Z",
+                        "Y"
+                      ]
                     },
-                    "x": { "type": "number" },
-                    "y": { "type": "number" },
-                    "z": { "type": "number" }
+                    "x": {
+                      "type": "number"
+                    },
+                    "y": {
+                      "type": "number"
+                    },
+                    "z": {
+                      "type": "number"
+                    }
                   }
                 }
               }
@@ -324,11 +450,16 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "animationTime": { "type": "number" },
-              "sustainedAudio": { "type": "string" }
+              "animationTime": {
+                "type": "number"
+              },
+              "sustainedAudio": {
+                "type": "string"
+              }
             }
           },
-          "harvest": { "type": "boolean",
+          "harvest": {
+            "type": "boolean",
             "description": "if the part can be harvested"
           },
           "chest": {
@@ -336,7 +467,8 @@
             "description": "specifies that this object is a chest",
             "additionalProperties": false,
             "properties": {
-              "slots": { "type": "integer",
+              "slots": {
+                "type": "integer",
                 "description": "The amount of slots that the chest has"
               }
             }
@@ -345,17 +477,29 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "length": { "type": "number" }
+              "length": {
+                "type": "number"
+              }
             }
           },
-          "survivalThruster": { "type": "object" },
-          "survivalSequence": { "type": "object" },
-          "survivalSensor": { "type": "object" },
-          "survivalPiston": { "type": "object" },
+          "survivalThruster": {
+            "type": "object"
+          },
+          "survivalSequence": {
+            "type": "object"
+          },
+          "survivalSensor": {
+            "type": "object"
+          },
+          "survivalPiston": {
+            "type": "object"
+          },
           "previewRotation": {
             "type": "array",
             "description": "(quat?) used to set the angle for the inventory icon generated by the mod tool",
-            "items": { "type": "number" },
+            "items": {
+              "type": "number"
+            },
             "minLength": 9,
             "maxLength": 9
           },
@@ -364,38 +508,56 @@
             "description": "specifies if the part can be planted",
             "additionalProperties": false,
             "properties": {
-              "harvestable": { "$ref": "./uuid.json",
+              "harvestable": {
+                "$ref": "./uuid.json",
                 "description": "the uuid of a harvestable that is associated with this part"
               }
             }
           },
-          "friction": { "type": "number" },
-          "restitution": { "type": "number" },
-          "harvestablePart": { "type": "boolean" },
-          "button": { "type": "object",
+          "friction": {
+            "type": "number"
+          },
+          "restitution": {
+            "type": "number"
+          },
+          "harvestablePart": {
+            "type": "boolean"
+          },
+          "button": {
+            "type": "object",
             "description": "specifies that the part is a button"
           },
-          "baseUuid": { "$ref": "./uuid.json" },
+          "baseUuid": {
+            "$ref": "./uuid.json"
+          },
           "title": {
             "type": "string",
             "description": "man just stick to one fucking thing just fucking use name instead of this but sm devs use this shit for whatever reason just in one shapeSet"
           },
-          "lever": { "type": "object",
+          "lever": {
+            "type": "object",
             "description": "specifies that the object is a \"lever\" or switch"
           },
-          "legacyId": { "type": "number",
+          "legacyId": {
+            "type": "number",
             "deprecated": true,
             "description": "old SM identifier"
           },
           "preview": {
             "type": "object",
             "additionalProperties": false,
-            "properties": { "effect": { "type": "string" } }
+            "properties": {
+              "effect": {
+                "type": "string"
+              }
+            }
           },
-          "logic": { "type": "object",
+          "logic": {
+            "type": "object",
             "description": "specifies that this is a logic gate"
           },
-          "timer": { "type": "object",
+          "timer": {
+            "type": "object",
             "description": "specifiew that this is a timer"
           },
           "tone": {
@@ -409,7 +571,11 @@
                 "items": {
                   "type": "object",
                   "additionalProperties": false,
-                  "properties": { "event": { "type": "string" } }
+                  "properties": {
+                    "event": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -419,18 +585,25 @@
             "description": "specifies that this is a piston",
             "additionalProperties": false,
             "properties": {
-              "length": { "type": "number",
+              "length": {
+                "type": "number",
                 "description": "max length it can go"
               },
-              "defaultRange": { "type": "number",
+              "defaultRange": {
+                "type": "number",
                 "description": "default length it is set to"
               },
-              "effect": { "$ref": "./effect.json" },
-              "defaultSpeedLevel": { "type": "number",
+              "effect": {
+                "$ref": "./effect.json"
+              },
+              "defaultSpeedLevel": {
+                "type": "number",
                 "description": "default speed it is set to"
               },
-              "force": { "type": "number",
-                "description": "how much force it exerpts\n(the normal creative piston is 100000.0)"},
+              "force": {
+                "type": "number",
+                "description": "how much force it exerpts\n(the normal creative piston is 100000.0)"
+              },
               "speedLevels": {
                 "type": "array",
                 "description": "list of different speeds it can have",
@@ -438,24 +611,34 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "speed": { "type": "number" }
+                    "speed": {
+                      "type": "number"
+                    }
                   }
                 }
               }
             }
           },
-          "qualityLevel": { "type": "number" },
-          "bearing": { "type": "object",
-            "description": "specifies that this is a bearing"},
+          "qualityLevel": {
+            "type": "number"
+          },
+          "bearing": {
+            "type": "object",
+            "description": "specifies that this is a bearing"
+          },
           "spring": {
             "type": "object",
             "description": "specifies it is a spring/suspension",
             "additionalProperties": false,
             "properties": {
-              "length": { "type": "number",
-                "description": "the starting length it is at"},
-              "defaultStiffnessLevel": { "type": "number",
-                "description": "it's default stiffness"},
+              "length": {
+                "type": "number",
+                "description": "the starting length it is at"
+              },
+              "defaultStiffnessLevel": {
+                "type": "number",
+                "description": "it's default stiffness"
+              },
               "stiffnessLevels": {
                 "type": "array",
                 "description": "list of all the different stiffnesses",
@@ -463,11 +646,15 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "stiffness": { "type": "number" }
+                    "stiffness": {
+                      "type": "number"
+                    }
                   }
                 }
               },
-              "effect": { "$ref": "./effect.json" }
+              "effect": {
+                "$ref": "./effect.json"
+              }
             }
           },
           "steering": {
@@ -484,7 +671,9 @@
             "description": "specifies that this is a controller",
             "additionalProperties": false,
             "properties": {
-              "effect": { "$ref": "./effect.json" }
+              "effect": {
+                "$ref": "./effect.json"
+              }
             }
           },
           "sensor": {
@@ -492,11 +681,16 @@
             "description": "specifies that this is a sensor",
             "additionalProperties": false,
             "properties": {
-              "onEffect": { "$ref": "./effect.json" },
-              "offEffect": { "$ref": "./effect.json" }
+              "onEffect": {
+                "$ref": "./effect.json"
+              },
+              "offEffect": {
+                "$ref": "./effect.json"
+              }
             }
           },
-          "radio": { "type": "object",
+          "radio": {
+            "type": "object",
             "description": "specifies that this a sensor"
           },
           "thruster": {
@@ -511,12 +705,18 @@
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "averageForce": { "type": "number" },
-                    "forceVariation": { "type": "number" }
+                    "averageForce": {
+                      "type": "number"
+                    },
+                    "forceVariation": {
+                      "type": "number"
+                    }
                   }
                 }
               },
-              "effect": { "$ref": "./effect.json" }
+              "effect": {
+                "$ref": "./effect.json"
+              }
             }
           }
         }
@@ -527,11 +727,14 @@
       "items": {
         "type": "object",
         "properties": {
-          "uuid": { "$ref": "./uuid.json",
+          "uuid": {
+            "$ref": "./uuid.json",
             "title": "the unique identifier of the block"
           },
-          "name": { "type": "string",
-            "title": "a unique name for the block."},
+          "name": {
+            "type": "string",
+            "title": "a unique name for the block."
+          },
           "dif": {
             "$ref": "./smPath.json",
             "title": "path to DIF texture"
@@ -548,25 +751,42 @@
             "type": "integer",
             "description": "Amount of blocks of Tiling the texture represents"
           },
-          "color": { "$ref": "./hexColor.json" },
-          "physicsMaterial": { "$ref": "./materials.json" },
-          "ratings": { "$ref": "#/definitions/objRatings" },
-          "friction": { "type": "number" },
-          "flammable": { "type": "boolean",
+          "color": {
+            "$ref": "./hexColor.json"
+          },
+          "physicsMaterial": {
+            "$ref": "./materials.json"
+          },
+          "ratings": {
+            "$ref": "#/definitions/objRatings"
+          },
+          "friction": {
+            "type": "number"
+          },
+          "flammable": {
+            "type": "boolean",
             "description": "if the block is flammable"
           },
-          "density": { "type": "number",
+          "density": {
+            "type": "number",
             "description": "the density of the block"
           },
-          "qualityLevel": { "type": "number" },
-          "restrictions": { "$ref": "#/definitions/objRestrictions" },
-          "alpha": { "type": "boolean",
+          "qualityLevel": {
+            "type": "number"
+          },
+          "restrictions": {
+            "$ref": "#/definitions/objRestrictions"
+          },
+          "alpha": {
+            "type": "boolean",
             "description": "if the block has transparency"
           },
-          "glass": { "type": "boolean",
+          "glass": {
+            "type": "boolean",
             "description": "if the block is considerd glass "
           },
-          "max_stack_count": { "type": "integer",
+          "max_stack_count": {
+            "type": "integer",
             "description": "the maximum amount of blocks that can be stacked in one inventory slot"
           }
         }

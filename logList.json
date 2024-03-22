@@ -10,17 +10,26 @@
       "items": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "uuid": { "$ref": "./uuid.json",
+          "name": {
+            "type": "string"
+          },
+          "uuid": {
+            "$ref": "./uuid.json",
             "title": "uuid for the Log Entry"
           },
-          "type": { "type": "string" },
-          "photo": { "type": "string",
+          "type": {
+            "type": "string"
+          },
+          "photo": {
+            "type": "string",
             "description": "name of file for the image"
           },
-          "location": { "type": "string",
-            "description": "special name pointing to a location in the world"},
-          "icon": { "type": "string",
+          "location": {
+            "type": "string",
+            "description": "special name pointing to a location in the world"
+          },
+          "icon": {
+            "type": "string",
             "description": "in-game UI marker icon"
           }
         }

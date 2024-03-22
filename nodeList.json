@@ -8,7 +8,9 @@
     "colorArray": {
       "type": "array",
       "description": "An array representing a color [R, G, B, A]",
-      "items": { "type": "number" }
+      "items": {
+        "type": "number"
+      }
     }
   },
   "properties": {
@@ -17,21 +19,38 @@
       "items": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
+          "name": {
+            "type": "string"
+          },
           "tags": {
             "type": "array",
-            "items": { "type": "string" },
+            "items": {
+              "type": "string"
+            },
             "description": "The first tag is considered the primary tag and should be unique"
           },
-          "color": { "$ref": "#/definitions/colorArray" },
-          "billboardColor": { "$ref": "#/definitions/colorArray" },
+          "color": {
+            "$ref": "#/definitions/colorArray"
+          },
+          "billboardColor": {
+            "$ref": "#/definitions/colorArray"
+          },
           "params": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "name": { "type": "string" },
-                "type": { "enum": ["bool", "string", "effect", "connections"] },
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "enum": [
+                    "bool",
+                    "string",
+                    "effect",
+                    "connections"
+                  ]
+                },
                 "default": {
                   "type": [
                     "boolean",
@@ -46,7 +65,8 @@
               }
             }
           },
-          "renderable": { "$ref": "./smPath.json",
+          "renderable": {
+            "$ref": "./smPath.json",
             "title": "path to renderable"
           },
           "optionalParams": {
@@ -54,8 +74,17 @@
             "items": {
               "type": "object",
               "properties": {
-                "name": { "type": "string" },
-                "type": { "enum": ["bool", "string", "effect", "connections"] },
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "enum": [
+                    "bool",
+                    "string",
+                    "effect",
+                    "connections"
+                  ]
+                },
                 "default": {
                   "type": [
                     "boolean",

@@ -4,7 +4,12 @@
   "title": "effectParams",
   "description": "Paramaters for an Effect",
   "oneOf": [
-    { "type": "array", "items": { "type": "string" } },
+    {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     {
       "type": "object",
       "patternProperties": {
@@ -14,10 +19,18 @@
             "type": "object",
             "properties": {
               "condition": {
-                "enum": ["greater", "equal", "less"]
+                "enum": [
+                  "greater",
+                  "equal",
+                  "less"
+                ]
               },
-              "value": { "type": "number" },
-              "name": { "type": "string" },
+              "value": {
+                "type": "number"
+              },
+              "name": {
+                "type": "string"
+              },
               "parameters": {
                 "$ref": "#"
               }

@@ -12,22 +12,32 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "filename": { "$ref": "./smPath.json",
+                    "filename": {
+                        "$ref": "./smPath.json",
                         "title": "Path to script"
                     },
-                    "classname": { "type": "string", 
+                    "classname": {
+                        "type": "string",
                         "description": "The class that the game will inject all the callbacks and properties into"
                     },
-                    "name": { "type": "string",
+                    "name": {
+                        "type": "string",
                         "description": "A unique name of the scriptable object"
                     },
-                    "uuid": { "$ref": "./uuid.json",
+                    "uuid": {
+                        "$ref": "./uuid.json",
                         "description": "A unique identifier for the scriptable object"
                     }
                 },
-                "required": ["filename","classname", "uuid"]
+                "required": [
+                    "filename",
+                    "classname",
+                    "uuid"
+                ]
             }
         }
     },
-    "required": ["scriptableObjectList"]
+    "required": [
+        "scriptableObjectList"
+    ]
 }

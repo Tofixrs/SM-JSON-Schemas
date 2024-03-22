@@ -12,10 +12,13 @@
         "type": "object",
         "additionalItems": false,
         "properties": {
-          "name": { "type": "string",
+          "name": {
+            "type": "string",
             "description": "Used to refrence the rotation from shapeSet"
           },
-          "prop": { "type": "boolean"}, 
+          "prop": {
+            "type": "boolean"
+          },
           "rotation": {
             "type": "array",
             "description": "Lsit of all rotations for this rotationset",
@@ -23,10 +26,26 @@
               "type": "object",
               "additionalItems": false,
               "properties": {
-                "south": { "enum": ["-Y", "-X", "-Z", "Y", "X", "Z"],
+                "south": {
+                  "enum": [
+                    "-Y",
+                    "-X",
+                    "-Z",
+                    "Y",
+                    "X",
+                    "Z"
+                  ],
                   "description": "Which axis will face south"
                 },
-                "east": { "enum": ["-Y", "-X", "-Z", "Y", "X", "Z"],
+                "east": {
+                  "enum": [
+                    "-Y",
+                    "-X",
+                    "-Z",
+                    "Y",
+                    "X",
+                    "Z"
+                  ],
                   "description": "Which axis will face east"
                 }
               }

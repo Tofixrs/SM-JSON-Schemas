@@ -11,13 +11,18 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "scriptableObjectSet": { "$ref": "./smPath.json",
+          "scriptableObjectSet": {
+            "$ref": "./smPath.json",
             "title": "Path to a SOBSet"
           }
         },
-        "required": ["scriptableObjectSet"]
+        "required": [
+          "scriptableObjectSet"
+        ]
       }
     }
   },
-  "required": ["scriptableObjectSetList"]
+  "required": [
+    "scriptableObjectSetList"
+  ]
 }

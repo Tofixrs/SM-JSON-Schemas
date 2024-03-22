@@ -21,7 +21,10 @@
           }
         }
       },
-      "required": ["col", "offset"]
+      "required": [
+        "col",
+        "offset"
+      ]
     },
     "script": {
       "additionalProperties": false,
@@ -41,7 +44,10 @@
           "description": "Additional data provided to the script available under self.data"
         }
       },
-      "required": ["scriptPath", "scriptClass"]
+      "required": [
+        "scriptPath",
+        "scriptClass"
+      ]
     }
   },
   "properties": {
@@ -51,13 +57,18 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "uuid": { "$ref": "./uuid.json" },
+          "uuid": {
+            "$ref": "./uuid.json"
+          },
           "renderables": {
             "type": "array",
             "description": "all the character's renderables.",
-            "items": { "$ref": "./smPath.json" }
+            "items": {
+              "$ref": "./smPath.json"
+            }
           },
-          "ragdoll": { "$ref": "./smPath.json",
+          "ragdoll": {
+            "$ref": "./smPath.json",
             "description": "The path to the ragdoll config for the character."
           },
           "tumble": {
@@ -65,7 +76,9 @@
             "description": "The tumble collider for the character.",
             "additionalProperties": false,
             "properties": {
-              "col": { "$ref": "./smPath.json" },
+              "col": {
+                "$ref": "./smPath.json"
+              },
               "offset": {
                 "type": "array",
                 "items": {
@@ -80,31 +93,48 @@
             "description": "The hit collider for the character.",
             "additionalProperties": false,
             "properties": {
-              "crouch": { "$ref": "#/definitions/hit" },
-              "stand": { "$ref": "#/definitions/hit" }
+              "crouch": {
+                "$ref": "#/definitions/hit"
+              },
+              "stand": {
+                "$ref": "#/definitions/hit"
+              }
             }
           },
-          "unit": { "$ref": "#/definitions/script" },
-          "character": { "$ref": "#/definitions/script" },
+          "unit": {
+            "$ref": "#/definitions/script"
+          },
+          "character": {
+            "$ref": "#/definitions/script"
+          },
           "movement": {
             "type": "object",
             "description": "How the character is allowed to move",
             "properties": {
-              "moveSpeed": { "type": "number",
+              "moveSpeed": {
+                "type": "number",
                 "description": "The normal move speed."
               },
-              "slowDownSpeed": { "type": "number",
+              "slowDownSpeed": {
+                "type": "number",
                 "description": "how fast the character slows down (friction?)"
               },
-              "crouchSpeed": { "type": "number",
+              "crouchSpeed": {
+                "type": "number",
                 "description": "The speed the character can move while crouched."
               },
-              "sprintSpeed": { "type": "number",
+              "sprintSpeed": {
+                "type": "number",
                 "description": "The speed the character can sprint at."
               },
-              "headingRotationSpeed": { "type": "number" },
-              "facingRotationSpeed": { "type": "number" },
-              "canSwim": { "type": "boolean",
+              "headingRotationSpeed": {
+                "type": "number"
+              },
+              "facingRotationSpeed": {
+                "type": "number"
+              },
+              "canSwim": {
+                "type": "boolean",
                 "description": "If the character can swim."
               }
             }
@@ -113,28 +143,39 @@
             "type": "object",
             "description": "The capsule collider for the character.",
             "properties": {
-              "radius": { "type": "number" },
-              "height": { "type": "number" },
-              "crouchHeight": { "type": "number",
+              "radius": {
+                "type": "number"
+              },
+              "height": {
+                "type": "number"
+              },
+              "crouchHeight": {
+                "type": "number",
                 "description": "The height of the capsule when crouched."
               }
             }
           },
-          "mass": { "type": "number" },
-          "characterShapeUuid": { "$ref": "./uuid.json",
+          "mass": {
+            "type": "number"
+          },
+          "characterShapeUuid": {
+            "$ref": "./uuid.json",
             "description": "A UUID of a shape that represents the character."
           },
           "paint": {
             "type": "object",
             "description": "how the character can be painted.",
             "properties": {
-              "enable": { "type": "boolean",
+              "enable": {
+                "type": "boolean",
                 "description": "If the player can paint this character."
               },
-              "defaultColor": { "$ref": "./hexColor.json",
+              "defaultColor": {
+                "$ref": "./hexColor.json",
                 "description": "default color of the character."
               },
-              "effect": { "$ref": "./effect.json",
+              "effect": {
+                "$ref": "./effect.json",
                 "description": "the effect to play when the character is painted."
               }
             }

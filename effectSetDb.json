@@ -11,11 +11,17 @@
       "items": {
         "type": "object",
         "properties": {
-          "path": { "$ref": "./smPath.json" },
-          "showInEditor": { "type": "boolean" }
+          "path": {
+            "$ref": "./smPath.json"
+          },
+          "showInEditor": {
+            "type": "boolean"
+          }
         }
       }
     }
   },
-  "required": ["effectSetList"]
+  "required": [
+    "effectSetList"
+  ]
 }

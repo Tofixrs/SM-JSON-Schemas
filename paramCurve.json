@@ -6,22 +6,32 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "loop": { "type": "number" },
-    "speed": { "type": "number" },
+    "loop": {
+      "type": "number"
+    },
+    "speed": {
+      "type": "number"
+    },
     "timeline": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "time": { "type": "number" },
+          "time": {
+            "type": "number"
+          },
           "value": {
             "oneOf": [
               {
                 "type": "array",
-                "items": { "type": "number" }
+                "items": {
+                  "type": "number"
+                }
               },
-              { "type": "number" }
+              {
+                "type": "number"
+              }
             ]
           },
           "easing": {

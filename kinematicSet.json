@@ -11,46 +11,66 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "col": { "$ref": "./smPath.json",
+          "col": {
+            "$ref": "./smPath.json",
             "description": "Path to the collision object"
           },
-          "color": { "$ref": "./hexColor.json",
+          "color": {
+            "$ref": "./hexColor.json",
             "description": "Color of the kinematic"
           },
-          "mass": { "type": "number",
+          "mass": {
+            "type": "number",
             "description": "Mass of the kinematic"
           },
-          "material": { "$ref": "./materials.json" },
-          "name": { "type": "string" },
+          "material": {
+            "$ref": "./materials.json"
+          },
+          "name": {
+            "type": "string"
+          },
           "params": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "name": { "type": "string" },
-                "type": { "type": "string" }
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
               }
             }
           },
-          "renderable": { "$ref": "./smPath.json",
+          "renderable": {
+            "$ref": "./smPath.json",
             "title": "path to the renderable object"
           },
           "script": {
             "type": "object",
             "properties": {
-              "file": { "$ref": "./smPath.json",
+              "file": {
+                "$ref": "./smPath.json",
                 "title": "Path to the script"
               },
-              "class": { "type": "string",
+              "class": {
+                "type": "string",
                 "description": "The class that the game will inject all the callbacks and properties into"
               },
-              "data": { "type": "object",
+              "data": {
+                "type": "object",
                 "description": "Additional data provided to the script available under self.data"
               }
             },
-            "required": ["file", "class"]
+            "required": [
+              "file",
+              "class"
+            ]
           },
-          "uuid": { "$ref": "./uuid.json" }
+          "uuid": {
+            "$ref": "./uuid.json"
+          }
         }
       }
     }

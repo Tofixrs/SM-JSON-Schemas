@@ -7,8 +7,12 @@
   "properties": {
     "characterSetList": {
       "type": "array",
-      "items": { "$ref": "./smPath.json" }
+      "items": {
+        "$ref": "./smPath.json"
+      }
     }
   },
-  "required": ["characterSetList"]
+  "required": [
+    "characterSetList"
+  ]
 }

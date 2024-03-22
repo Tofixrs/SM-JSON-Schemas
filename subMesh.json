@@ -9,11 +9,19 @@
     "textureList": {
       "type": "array",
       "description": "list of all the textures used in this subMesh, the order is described in (material)",
-      "items": { "$ref": "./smPath.json" }
+      "items": {
+        "$ref": "./smPath.json"
+      }
     },
-    "material": { "$ref": "./textureMaterial.json" },
-    "custom": { "type": "object" },
-    "idx": { "type": "integer" }
+    "material": {
+      "$ref": "./textureMaterial.json"
+    },
+    "custom": {
+      "type": "object"
+    },
+    "idx": {
+      "type": "integer"
+    }
   },
   "patternProperties": {
     "^pose[0-9]*$": {

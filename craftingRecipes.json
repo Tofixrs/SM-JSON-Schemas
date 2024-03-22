@@ -27,7 +27,10 @@
         "description": "List of items needed to craft the item",
         "items": {
           "type": "object",
-          "required": ["quantity", "itemId"],
+          "required": [
+            "quantity",
+            "itemId"
+          ],
           "properties": {
             "quantity": {
               "type": "integer",
@@ -46,7 +49,10 @@
         "description": "Extra item that you will get when crafting used for things such as getting water from bucket",
         "items": {
           "type": "object",
-          "required": ["quantity", "itemId"],
+          "required": [
+            "quantity",
+            "itemId"
+          ],
           "properties": {
             "quantity": {
               "type": "integer",
@@ -65,7 +71,12 @@
         "description": "Used for Dressbot",
         "properties": {
           "tier": {
-            "enum": ["Common", "Rare", "Epic", ""]
+            "enum": [
+              "Common",
+              "Rare",
+              "Epic",
+              ""
+            ]
           }
         }
       }

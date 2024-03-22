@@ -12,10 +12,12 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "maxViewDistance": { "type": "number",
+          "maxViewDistance": {
+            "type": "number",
             "description": "The maximum view distance for this LoD"
           },
-          "mesh": { "$ref": "./smPath.json",
+          "mesh": {
+            "$ref": "./smPath.json",
             "title": "path to the mesh file"
           },
           "includes": {
@@ -38,13 +40,17 @@
           "subMeshList": {
             "type": "array",
             "description": "List of SubMeshes",
-            "items": { "$ref": "./subMesh.json" }
+            "items": {
+              "$ref": "./subMesh.json"
+            }
           },
           "subMeshMap": {
             "type": "object",
             "description": "A key-value map of subMeshes",
             "patternProperties": {
-              "^.*$": { "$ref": "./subMesh.json" }
+              "^.*$": {
+                "$ref": "./subMesh.json"
+              }
             }
           },
           "animationList": {
@@ -54,13 +60,16 @@
               "type": "object",
               "additionalProperties": false,
               "properties": {
-                "name": { "type": "string",
+                "name": {
+                  "type": "string",
                   "description": "name of the animation\nused to find the animation from the script"
                 },
-                "file": { "$ref": "./smPath.json",
+                "file": {
+                  "$ref": "./smPath.json",
                   "title": "Path to the animated DAE file"
                 },
-                "looping": { "type": "boolean",
+                "looping": {
+                  "type": "boolean",
                   "description": "if the animation loops\ncan be stoped from in the script"
                 }
               }
