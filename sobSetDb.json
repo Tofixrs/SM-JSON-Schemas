@@ -1,30 +1,28 @@
 {
-  "$id": "./decalSetDb.json",
   "$schema": "https://json-schema.org/draft-07/schema",
-  "title": "decalSetDb",
-  "description": "List of Decal Sets",
+  "$id": "./sobSetDb.json",
+  "title": "SOBSetDb",
+  "description": "A List of SOBSets",
   "type": "object",
   "properties": {
-    "decalSetList": {
+    "scriptableObjectSetList": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "set": {
-            "$ref": "./smPath.json"
-          },
-          "category": {
-            "type": "string"
+          "scriptableObjectSet": {
+            "$ref": "./smPath.json",
+            "title": "Path to a SOBSet"
           }
         },
         "required": [
-          "set"
+          "scriptableObjectSet"
         ]
       }
     }
   },
   "required": [
-    "decalSetList"
+    "scriptableObjectSetList"
   ]
 }

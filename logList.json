@@ -2,7 +2,7 @@
   "$id": "./logList.json",
   "$schema": "https://json-schema.org/draft-07/schema",
   "title": "logList",
-  "description": "List of Logs to be use in Log Book.",
+  "description": "List of Log Entries to be use in Log Book.",
   "type": "object",
   "properties": {
     "logList": {
@@ -10,14 +10,28 @@
       "items": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "uuid": {
-            "$ref": "./uuid.json"
+          "name": {
+            "type": "string"
           },
-          "type": { "type": "string" },
-          "photo": { "type": "string" },
-          "location": { "type": "string" },
-          "icon": { "type": "string" }
+          "uuid": {
+            "$ref": "./uuid.json",
+            "title": "uuid for the Log Entry"
+          },
+          "type": {
+            "type": "string"
+          },
+          "photo": {
+            "type": "string",
+            "description": "name of file for the image"
+          },
+          "location": {
+            "type": "string",
+            "description": "special name pointing to a location in the world"
+          },
+          "icon": {
+            "type": "string",
+            "description": "in-game UI marker icon"
+          }
         }
       }
     }

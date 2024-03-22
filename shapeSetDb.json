@@ -8,8 +8,12 @@
     "shapeSetList": {
       "description": "",
       "type": "array",
-      "items": { "$ref": "./smPath.json" }
+      "items": {
+        "$ref": "./smPath.json"
+      }
     }
   },
-  "required": ["shapeSetList"]
+  "required": [
+    "shapeSetList"
+  ]
 }

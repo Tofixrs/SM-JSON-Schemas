@@ -6,9 +6,19 @@
   "additionalProperties": false,
   "type": "object",
   "properties": {
-    "x": { "type": "number" },
-    "y": { "type": "number" },
-    "z": { "type": "number" }
+    "x": {
+      "type": "number"
+    },
+    "y": {
+      "type": "number"
+    },
+    "z": {
+      "type": "number"
+    }
   },
-  "required": ["x", "y", "z"]
+  "required": [
+    "x",
+    "y",
+    "z"
+  ]
 }

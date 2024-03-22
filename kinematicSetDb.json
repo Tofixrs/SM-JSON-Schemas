@@ -8,8 +8,13 @@
   "properties": {
     "kinematicSetList": {
       "type": "array",
-      "items": { "$ref": "./smPath.json" }
+      "items": {
+        "$ref": "./smPath.json"
+      }
     }
   },
-  "required": ["col", "offset"]
+  "required": [
+    "col",
+    "offset"
+  ]
 }

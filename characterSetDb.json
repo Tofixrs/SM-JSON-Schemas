@@ -1,15 +1,18 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
   "$id": "./characterSetDb.json",
-  "title": "CharacterSets",
+  "title": "CharacterSetDb",
   "description": "List of Character Sets",
   "type": "object",
   "properties": {
     "characterSetList": {
-      "description": "",
       "type": "array",
-      "items": { "$ref": "./smPath.json" }
+      "items": {
+        "$ref": "./smPath.json"
+      }
     }
   },
-  "required": ["characterSetList"]
+  "required": [
+    "characterSetList"
+  ]
 }

@@ -12,17 +12,35 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "name": { "type": "string" },
-          "offset": { "$ref": "./vec3.json" },
-          "freeRotation": { "type": "boolean" },
-          "steers": { "type": "boolean" }
+          "name": {
+            "type": "string"
+          },
+          "offset": {
+            "$ref": "./vec3.json"
+          },
+          "freeRotation": {
+            "type": "boolean"
+          },
+          "steers": {
+            "type": "boolean"
+          }
         }
       }
     },
-    "ragdollFile": { "type": "string" },
-    "enterAudio": { "type": "string" },
-    "exitAudio": { "type": "string" },
-    "effect": { "type": "string" },
-    "steerAngle": { "type": "number" }
+    "ragdollFile": {
+      "type": "string"
+    },
+    "enterAudio": {
+      "type": "string"
+    },
+    "exitAudio": {
+      "type": "string"
+    },
+    "effect": {
+      "type": "string"
+    },
+    "steerAngle": {
+      "type": "number"
+    }
   }
 }

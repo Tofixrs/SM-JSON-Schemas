@@ -11,39 +11,82 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "uuid": { "$ref": "./uuid.json" },
-          "name": { "type": "string" },
-          "showInEditor": { "type": "boolean" },
-          "removable": { "type": "boolean" },
-          "disableClutter": { "type": "boolean" },
-          "destroyTime": { "type": "number" },
+          "uuid": {
+            "$ref": "./uuid.json"
+          },
+          "name": {
+            "type": "string"
+          },
+          "showInEditor": {
+            "type": "boolean",
+            "description": "If the harvestable is visible in tile editor"
+          },
+          "removable": {
+            "type": "boolean",
+            "description": "If the harvestable can be removed by the player"
+          },
+          "disableClutter": {
+            "type": "boolean",
+            "description": "Removes clutter from tile where the harvestable is placed"
+          },
+          "destroyTime": {
+            "type": "number",
+            "description": "how long it takes for the player to destroy it."
+          },
           "type": {
             "type": "string",
             "description": "Only used for https://scrapmechanicdocs.com/docs/Game-Script-Environment/Static-Functions/sm.ai/#getclosesttree"
           },
-          "slope": { "enum": ["rotate"] },
-          "col": { "$ref": "./smPath.json" },
-          "col_box": { "$ref": "./vec3.json" },
-          "size": { "type": "integer" },
+          "slope": {
+            "enum": [
+              "rotate"
+            ]
+          },
+          "col": {
+            "$ref": "./smPath.json",
+            "title": "Path to the collision object"
+          },
+          "col_box": {
+            "$ref": "./vec3.json",
+            "title": "a Box collider"
+          },
+          "size": {
+            "type": "integer"
+          },
           "color": {
+            "title": "Color(s) of the harvestable",
             "oneOf": [
               {
                 "type": "array",
-                "items": { "$ref": "./hexColor.json" }
+                "items": {
+                  "$ref": "./hexColor.json"
+                }
               },
-              { "$ref": "./hexColor.json" }
+              {
+                "$ref": "./hexColor.json"
+              }
             ]
           },
           "physics": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "mass": { "type": "integer" },
-              "material": { "$ref": "./materials.json" }
+              "mass": {
+                "type": "integer",
+                "description": "The mass of the harvestable's physics"
+              },
+              "material": {
+                "$ref": "./materials.json"
+              }
             }
           },
-          "mass": { "type": "integer" },
-          "material": { "$ref": "./materials.json" },
+          "mass": {
+            "type": "integer",
+            "description": "the mass of the harvestable"
+          },
+          "material": {
+            "$ref": "./materials.json"
+          },
           "script": {
             "type": "object",
             "properties": {
@@ -60,16 +103,39 @@
                 "description": "Additional data provided to the script available under self.data"
               }
             },
-            "required": ["class", "file"]
+            "required": [
+              "class",
+              "file"
+            ]
           },
           "renderable": {
-            "oneOf": [{ "$ref": "./smPath.json" }, { "$ref": "./rend.json" }]
+            "description": "The renderable of the harvestable",
+            "oneOf": [
+              {
+                "$ref": "./smPath.json"
+              },
+              {
+                "$ref": "./rend.json"
+              }
+            ]
           },
           "collides": {
-            "character": { "type": "boolean" },
-            "body": { "type": "boolean" },
-            "projectile": { "type": "boolean" },
-            "melee": { "type": "boolean" }
+            "type": "object",
+            "description": "What the harvestable collides with",
+            "properties": {
+              "character": {
+                "type": "boolean"
+              },
+              "body": {
+                "type": "boolean"
+              },
+              "projectile": {
+                "type": "boolean"
+              },
+              "melee": {
+                "type": "boolean"
+              }
+            }
           }
         }
       }

@@ -7,14 +7,22 @@
   "properties": {
     "lodList": {
       "type": "array",
+      "description": "A list of different Levels of Detail for the renderable.",
       "items": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "maxViewDistance": { "type": "number" },
-          "mesh": { "type": "string" },
+          "maxViewDistance": {
+            "type": "number",
+            "description": "The maximum view distance for this LoD"
+          },
+          "mesh": {
+            "$ref": "./smPath.json",
+            "title": "path to the mesh file"
+          },
           "includes": {
             "type": "array",
+            "description": "what parts this mesh/texture includes",
             "items": {
               "enum": [
                 "POSITION",
@@ -31,23 +39,39 @@
           },
           "subMeshList": {
             "type": "array",
-            "items": { "$ref": "./subMesh.json" }
+            "description": "List of SubMeshes",
+            "items": {
+              "$ref": "./subMesh.json"
+            }
           },
           "subMeshMap": {
             "type": "object",
+            "description": "A key-value map of subMeshes",
             "patternProperties": {
-              "^.*$": { "$ref": "./subMesh.json" }
+              "^.*$": {
+                "$ref": "./subMesh.json"
+              }
             }
           },
           "animationList": {
             "type": "array",
+            "description": "List of different animations that can be played from a script",
             "items": {
               "type": "object",
               "additionalProperties": false,
               "properties": {
-                "name": { "type": "string" },
-                "file": { "$ref": "./smPath.json" },
-                "looping": { "type": "boolean" }
+                "name": {
+                  "type": "string",
+                  "description": "name of the animation\nused to find the animation from the script"
+                },
+                "file": {
+                  "$ref": "./smPath.json",
+                  "title": "Path to the animated DAE file"
+                },
+                "looping": {
+                  "type": "boolean",
+                  "description": "if the animation loops\ncan be stoped from in the script"
+                }
               }
             }
           }

@@ -11,12 +11,23 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "name": { "$ref": "./smPath.json" },
-          "categories": { "type": "array", "items": { "type": "string" } }
+          "name": {
+            "$ref": "./smPath.json"
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
         },
-        "required": ["name"]
+        "required": [
+          "name"
+        ]
       }
     }
   },
-  "required": ["harvestableSetList"]
+  "required": [
+    "harvestableSetList"
+  ]
 }

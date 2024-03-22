@@ -8,11 +8,20 @@
   "properties": {
     "textureList": {
       "type": "array",
-      "items": { "$ref": "./smPath.json" }
+      "description": "list of all the textures used in this subMesh, the order is described in (material)",
+      "items": {
+        "$ref": "./smPath.json"
+      }
     },
-    "material": { "$ref": "./textureMaterial.json" },
-    "custom": { "type": "object" },
-    "idx": { "type": "integer" }
+    "material": {
+      "$ref": "./textureMaterial.json"
+    },
+    "custom": {
+      "type": "object"
+    },
+    "idx": {
+      "type": "integer"
+    }
   },
   "patternProperties": {
     "^pose[0-9]*$": {

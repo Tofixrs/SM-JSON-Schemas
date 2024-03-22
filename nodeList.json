@@ -4,27 +4,53 @@
   "title": "nodeList",
   "description": "A list of Nodes for use in tiles.",
   "type": "object",
+  "definitions": {
+    "colorArray": {
+      "type": "array",
+      "description": "An array representing a color [R, G, B, A]",
+      "items": {
+        "type": "number"
+      }
+    }
+  },
   "properties": {
     "nodeList": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
+          "name": {
+            "type": "string"
+          },
           "tags": {
             "type": "array",
-            "items": { "type": "string" },
+            "items": {
+              "type": "string"
+            },
             "description": "The first tag is considered the primary tag and should be unique"
           },
-          "color": { "type": "array", "items": { "type": "number" } },
-          "billboardColor": { "type": "array", "items": { "type": "number" } },
+          "color": {
+            "$ref": "#/definitions/colorArray"
+          },
+          "billboardColor": {
+            "$ref": "#/definitions/colorArray"
+          },
           "params": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "name": { "type": "string" },
-                "type": { "enum": ["bool", "string", "effect", "connections"] },
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "enum": [
+                    "bool",
+                    "string",
+                    "effect",
+                    "connections"
+                  ]
+                },
                 "default": {
                   "type": [
                     "boolean",
@@ -39,14 +65,26 @@
               }
             }
           },
-          "renderable": { "$ref": "./smPath.json" },
+          "renderable": {
+            "$ref": "./smPath.json",
+            "title": "path to renderable"
+          },
           "optionalParams": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "name": { "type": "string" },
-                "type": { "enum": ["bool", "string", "effect", "connections"] },
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "enum": [
+                    "bool",
+                    "string",
+                    "effect",
+                    "connections"
+                  ]
+                },
                 "default": {
                   "type": [
                     "boolean",
