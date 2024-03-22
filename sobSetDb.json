@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "./sobSetDb.json",
+  "title": "SOBSetDb",
+  "description": "A List of SOBSets",
+  "type": "object",
+  "properties": {
+    "scriptableObjectSetList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scriptableObjectSet": { "$ref": "./smPath.json",
+            "title": "Path to a SOBSet"
+          }
+        },
+        "required": ["scriptableObjectSet"]
+      }
+    }
+  },
+  "required": ["scriptableObjectSetList"]
+}
