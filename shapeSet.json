@@ -55,34 +55,50 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "uuid": { "$ref": "./uuid.json" },
-          "destroyTime": { "type": "number" },
-          "density": { "type": "number" },
-          "name": { "type": "string" },
+          "uuid": { "$ref": "./uuid.json",
+            "title": "A unique identifier for the part"
+          },
+          "destroyTime": { "type": "number",
+            "description": "The time it takes to destroy the part"
+          },
+          "density": { "type": "number"},
+          "name": { "type": "string",
+            "description": "A unique name for the part"
+          },
           "color": { "$ref": "./hexColor.json" },
-          "box": { "$ref": "./vec3.json" },
+          "box": { "$ref": "./vec3.json",
+            "title": "A rectangular box collider"
+          },
           "cylinder": {
             "type": "object",
+            "description": "A cylindrical collider",
             "properties": {
               "diameter": { "type": "number" },
               "depth": { "type": "number" },
               "margin": { "type": "number" },
-              "axis": { "enum": ["Y", "X", "Z"] }
+              "axis": { "enum": ["Y", "X", "Z"],
+                "description": "which axis the depth is on"
+              }
             }
           },
           "hull": {
             "type": "object",
+            "description": "A convex hull collider\n[x,y,z] are a rectangular box that contains the hull",
             "additionalProperties": false,
             "properties": {
               "x": { "type": "number" },
               "y": { "type": "number" },
               "z": { "type": "number" },
-              "col": { "type": "string" },
+              "col": { "$ref": "./smPath.json",
+                "title": "Path to collider"
+              },
               "margin": { "type": "number" }
-            }
+            },
+            "required": ["x","y","z", "col"]
           },
           "sphere": {
             "type": "object",
+            "description": "A spherical collider",
             "additionalProperties": false,
             "properties": {
               "diameter": { "type": "number" }
@@ -117,6 +133,7 @@
             "required": ["filename", "classname"]
           },
           "rotationSet": {
+            "description": "How the part can be rotated when placed",
             "oneOf": [
               {
                 "enum": [
@@ -204,16 +221,30 @@
           "seat": {
             "$ref": "./steering.json"
           },
-          "sticky": { "type": "string" },
+          "sticky": { "type": "string",
+            "description": "which axis can other block/parts be placed on",
+            "pattern": "([-+][XYZ])+"
+          },
           "physicsMaterial": { "$ref": "./materials.json" },
           "ratings": { "$ref": "#/definitions/objRatings" },
-          "flammable": { "type": "boolean" },
-          "autoTool": { "$ref": "./uuid.json" },
-          "stackSize": { "type": "integer" },
+          "flammable": { "type": "boolean",
+            "description": "if the part is flammable"
+          },
+          "autoTool": { "$ref": "./uuid.json",
+            "description": "the uuid of a tool, used when the part is placed"
+          },
+          "stackSize": { "type": "integer",
+            "description": "number of parts that can be in one inventory slot"
+          },
           "restrictions": { "$ref": "#/definitions/objRestrictions" },
-          "showInInventory": { "type": "boolean" },
+          "showInInventory": { "type": "boolean",
+            "description": "if the part is visible in the \"creative\" inventory"
+          },
           "renderable": {
-            "oneOf": [{ "type": "string" }, { "$ref": "./rend.json" }]
+            "oneOf": [{
+                "$ref": "./smPath.json",
+                "title": "path to renderable"
+              }, { "$ref": "./rend.json" }]
           },
           "characterShape": {
             "type": "object",
@@ -227,7 +258,9 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "defaultLuminance": { "type": "number" },
+              "defaultLuminance": { "type": "number",
+                "description": "default brightness"
+              },
               "effect": { "$ref": "./effect.json" }
             }
           },
@@ -240,29 +273,43 @@
             }
           },
           "itemStack": { "type": "object" },
-          "consumable": { "type": "boolean" },
+          "consumable": { "type": "boolean",
+            "description": "if the part is consumable\nused to put in the CONSUMABLE category of inventory"
+          },
           "edible": {
             "type": "object",
+            "description": "if it can be \"eaten\"",
             "additionalProperties": false,
             "properties": {
-              "hpGain": { "type": "number" },
-              "foodGain": { "type": "number" },
-              "waterGain": { "type": "number" }
+              "hpGain": { "type": "number",
+                "description": "the amount of health gained when eaten"
+              },
+              "foodGain": { "type": "number",
+                "description": "the amount of food gained when eaten"
+              },
+              "waterGain": { "type": "number",
+                "description": "the amount of water gained when eaten"
+              }
             }
           },
           "carryItem": { "type": "boolean" },
           "pipe": {
             "type": "object",
+            "description": "config for pipes",
             "additionalProperties": false,
             "properties": {
-              "extendable": { "type": "boolean" },
+              "extendable": { "type": "boolean",
+                "description": "if this part can be expanded with (Q)"
+              },
               "openings": {
                 "type": "array",
+                "description": "a list of all the different pipe connection points\n[X, Y, Z] is used to show where on the part the connection is.",
                 "items": {
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
                     "side": {
+                      "description": "which side the opening is on on",
                       "enum": ["+X", "-X", "+Y", "-Y", "+Z", "-Z", "Y"]
                     },
                     "x": { "type": "number" },
@@ -281,12 +328,17 @@
               "sustainedAudio": { "type": "string" }
             }
           },
-          "harvest": { "type": "boolean" },
+          "harvest": { "type": "boolean",
+            "description": "if the part can be harvested"
+          },
           "chest": {
             "type": "object",
+            "description": "specifies that this object is a chest",
             "additionalProperties": false,
             "properties": {
-              "slots": { "type": "integer" }
+              "slots": { "type": "integer",
+                "description": "The amount of slots that the chest has"
+              }
             }
           },
           "survivalSpring": {
@@ -300,38 +352,60 @@
           "survivalSequence": { "type": "object" },
           "survivalSensor": { "type": "object" },
           "survivalPiston": { "type": "object" },
-          "previewRotation": { "type": "array", "items": { "type": "number" } },
+          "previewRotation": {
+            "type": "array",
+            "description": "(quat?) used to set the angle for the inventory icon generated by the mod tool",
+            "items": { "type": "number" },
+            "minLength": 9,
+            "maxLength": 9
+          },
           "plantable": {
             "type": "object",
+            "description": "specifies if the part can be planted",
             "additionalProperties": false,
             "properties": {
-              "harvestable": { "$ref": "./uuid.json" }
+              "harvestable": { "$ref": "./uuid.json",
+                "description": "the uuid of a harvestable that is associated with this part"
+              }
             }
           },
           "friction": { "type": "number" },
           "restitution": { "type": "number" },
           "harvestablePart": { "type": "boolean" },
-          "button": { "type": "object" },
+          "button": { "type": "object",
+            "description": "specifies that the part is a button"
+          },
           "baseUuid": { "$ref": "./uuid.json" },
           "title": {
             "type": "string",
             "description": "man just stick to one fucking thing just fucking use name instead of this but sm devs use this shit for whatever reason just in one shapeSet"
           },
-          "lever": { "type": "object" },
-          "legacyId": { "type": "number", "deprecated": true },
+          "lever": { "type": "object",
+            "description": "specifies that the object is a \"lever\" or switch"
+          },
+          "legacyId": { "type": "number",
+            "deprecated": true,
+            "description": "old SM identifier"
+          },
           "preview": {
             "type": "object",
             "additionalProperties": false,
             "properties": { "effect": { "type": "string" } }
           },
-          "logic": { "type": "object" },
-          "timer": { "type": "object" },
+          "logic": { "type": "object",
+            "description": "specifies that this is a logic gate"
+          },
+          "timer": { "type": "object",
+            "description": "specifiew that this is a timer"
+          },
           "tone": {
             "type": "object",
+            "description": "used for specifying the audio for SM's note-heads",
             "additionalProperties": false,
             "properties": {
               "audio": {
                 "type": "array",
+                "description": "list of audio sources that the head can play",
                 "items": {
                   "type": "object",
                   "additionalProperties": false,
@@ -342,15 +416,24 @@
           },
           "piston": {
             "type": "object",
+            "description": "specifies that this is a piston",
             "additionalProperties": false,
             "properties": {
-              "length": { "type": "number" },
-              "defaultRange": { "type": "number" },
-              "effect": { "type": "string" },
-              "defaultSpeedLevel": { "type": "number" },
-              "force": { "type": "number" },
+              "length": { "type": "number",
+                "description": "max length it can go"
+              },
+              "defaultRange": { "type": "number",
+                "description": "default length it is set to"
+              },
+              "effect": { "$ref": "./effect.json" },
+              "defaultSpeedLevel": { "type": "number",
+                "description": "default speed it is set to"
+              },
+              "force": { "type": "number",
+                "description": "how much force it exerpts\n(the normal creative piston is 100000.0)"},
               "speedLevels": {
                 "type": "array",
+                "description": "list of different speeds it can have",
                 "items": {
                   "type": "object",
                   "additionalProperties": false,
@@ -362,15 +445,20 @@
             }
           },
           "qualityLevel": { "type": "number" },
-          "bearing": { "type": "object" },
+          "bearing": { "type": "object",
+            "description": "specifies that this is a bearing"},
           "spring": {
             "type": "object",
+            "description": "specifies it is a spring/suspension",
             "additionalProperties": false,
             "properties": {
-              "length": { "type": "number" },
-              "defaultStiffnessLevel": { "type": "number" },
+              "length": { "type": "number",
+                "description": "the starting length it is at"},
+              "defaultStiffnessLevel": { "type": "number",
+                "description": "it's default stiffness"},
               "stiffnessLevels": {
                 "type": "array",
+                "description": "list of all the different stiffnesses",
                 "items": {
                   "type": "object",
                   "additionalProperties": false,
@@ -379,7 +467,7 @@
                   }
                 }
               },
-              "effect": { "type": "string" }
+              "effect": { "$ref": "./effect.json" }
             }
           },
           "steering": {
@@ -393,26 +481,32 @@
           },
           "controller": {
             "type": "object",
+            "description": "specifies that this is a controller",
             "additionalProperties": false,
             "properties": {
-              "effect": { "type": "string" }
+              "effect": { "$ref": "./effect.json" }
             }
           },
           "sensor": {
             "type": "object",
+            "description": "specifies that this is a sensor",
             "additionalProperties": false,
             "properties": {
-              "onEffect": { "type": "string" },
-              "offEffect": { "type": "string" }
+              "onEffect": { "$ref": "./effect.json" },
+              "offEffect": { "$ref": "./effect.json" }
             }
           },
-          "radio": { "type": "object" },
+          "radio": { "type": "object",
+            "description": "specifies that this a sensor"
+          },
           "thruster": {
             "type": "object",
+            "description": "specifies that this is a thruster",
             "additionalProperties": false,
             "properties": {
               "levels": {
                 "type": "array",
+                "description": "list of all the different strength levels it can have",
                 "items": {
                   "type": "object",
                   "additionalProperties": false,
@@ -422,7 +516,7 @@
                   }
                 }
               },
-              "effect": { "type": "string" }
+              "effect": { "$ref": "./effect.json" }
             }
           }
         }
