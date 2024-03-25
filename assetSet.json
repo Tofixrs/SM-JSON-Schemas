@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "./assetSet.json",
+  "title": "AssetSet",
+  "description": "A List of terrain assets used in tile editor .",
+  "type": "object",
+  "properties": {
+    "assetListRenderable": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "col": {
+            "$ref": "./smPath.json",
+            "title": "path to a collider object"
+          },
+          "defaultColors": {
+            "type": "object",
+            "description": "default colors for the asset",
+            "patternProperties": {
+              "^.+$": {
+                "$ref": "./hexColor.json"
+              }
+            }
+          },
+          "name": {
+            "type": "string",
+            "description": "unique name of the asset"
+          },
+          "physics": {
+            "type": "object",
+            "description": "",
+            "properties": {
+              "mass": {
+                "type": "number",
+                "description": "mass of the asset"
+              },
+              "material": {
+                "$ref": "./materials.json"
+              }
+            },
+            "required": [
+              "mass",
+              "material"
+            ]
+          },
+          "renderable": {
+            "$ref": "./smPath.json",
+            "title": "path to a renderable file"
+          },
+          "uuid": {
+            "$ref": "./uuid.json"
+          }
+        },
+        "required": [
+          "uuid",
+          "renderable",
+          "col"
+        ]
+      }
+    }
+  },
+  "required": [
+    "assetListRenderable"
+  ]
+}
