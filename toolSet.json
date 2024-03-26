@@ -1,0 +1,68 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "./toolSet.json",
+    "title": "ToolSet",
+    "description": "A List of Tools. These can have custom code to add functionality",
+    "type": "object",
+    "properties": {
+        "toolList": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "uuid": {
+                        "$ref": "./uuid.json"
+                    },
+                    "previewRenderable": {
+                        "$ref": "./smPath.json",
+                        "title": "path to a Renderable used for generating preview image"
+                    },
+                    "previewRotation": {
+                        "type": "array",
+                        "description": "(quat?) Rotation of the preview image",
+                        "items": {
+                            "type": "number"
+                        },
+                        "minLength": 9,
+                        "maxLength": 9
+                    },
+                    "script": {
+                        "type": "object",
+                        "properties": {
+                            "file": {
+                                "$ref": "./smPath.json",
+                                "title": "path to lua script file"
+                            },
+                            "class": {
+                                "type": "string",
+                                "description": "Name of the class in the script file"
+                            },
+                            "data": {
+                                "type": "object",
+                                "description": "Additional data provided to the script available under self.data"
+                            }
+                        },
+                        "required": [
+                            "file",
+                            "class"
+                        ]
+                    },
+                    "autoTool": {
+                        "type": "boolean",
+                        "description": "if true, this tool is used for placing a shape\n(see property `autoTool` of shapeSet)"
+                    },
+                    "showInInventory": {
+                        "type": "boolean",
+                        "description": "if the tool should be visible in creative inventory (defaults to true)"
+                    }
+                },
+                "required": [
+                    "uuid"
+                ]
+            }
+        }
+    },
+    "required": [
+        "toolList"
+    ]
+}

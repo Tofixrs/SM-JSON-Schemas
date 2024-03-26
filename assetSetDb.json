@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "./assetSetDb.json",
+  "title": "AssetSetDb",
+  "description": "List of Asset Sets",
+  "type": "object",
+  "properties": {
+    "assetSetList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "description": "",
+        "additionalProperties": false,
+        "properties": {
+          "assetSet": {
+            "title": "Path to assetSet",
+            "$ref": "./smPath.json"
+          },
+          "categories": {
+            "type": "array",
+            "description": "A list of different categories that this asset is part of.\nUsed to to filter assets in tile editor.",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "assetSet"
+        ]
+      }
+    }
+  },
+  "required": [
+    "assetSetList"
+  ]
+}

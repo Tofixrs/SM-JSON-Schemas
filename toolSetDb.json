@@ -1,0 +1,18 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "./toolSetDb.json",
+    "title": "ToolSetDb",
+    "description": "List of Tool Sets",
+    "type": "object",
+    "properties": {
+        "toolSetList": {
+            "type": "array",
+            "items": {
+                "$ref": "./smPath.json"
+            }
+        }
+    },
+    "required": [
+        "toolSetList"
+    ]
+}
