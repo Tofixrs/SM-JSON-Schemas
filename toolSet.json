@@ -36,6 +36,10 @@
                             "class": {
                                 "type": "string",
                                 "description": "Name of the class in the script file"
+                            },
+                            "data": {
+                                "type": "object",
+                                "description": "Additional data provided to the script available under self.data"
                             }
                         },
                         "required": [

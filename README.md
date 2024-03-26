@@ -28,5 +28,3 @@ ShapeSet:
 - blockList: 'friction' & 'qualityLevel' description
 - partList: 'density', 'characterShape', 'itemStack', 'carryItem', 'simpleInteractive', 'survivalSpring', 'restitution', 'harvestablePart', 'baseUuid', 'preview'
 - where is `spotLight` used (capital L)
-ToolList:
-- idk if tool scripts can have `data`
